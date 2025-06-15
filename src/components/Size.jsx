@@ -31,7 +31,12 @@ const Size = () => {
 
     // Create a separate trigger for the cards visibility
     const cardsTrigger = gsap.timeline({
-      
+      scrollTrigger: {
+        trigger: cardsRef.current,
+        start: "bottom 100%", // Trigger when bottom of cards is 90% visible
+        end: "bottom 70%",
+        scrub: true,
+      },
     });
     // First animation: move the layer horizontally into position
     tl.to(".layer", {
