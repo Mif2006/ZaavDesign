@@ -19,8 +19,7 @@ const Size = () => {
   const cardsRef = useRef(null);
 
   useGSAP(() => {
-    // Main timeline for pinning the section (no layer animation here)
-    gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sizeTrigger.current,
         start: "top top",
@@ -30,36 +29,30 @@ const Size = () => {
       },
     });
 
-    // Separate trigger for cards visibility
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: cardsRef.current,
-        start: "top 90%",
-        end: "top 70%",
-        scrub: true,
-      },
-    }).to('.columns', {
-      opacity: 1,
-      y: -60,
-      duration: 0.8,
-      ease: "power2.out",
-    });
-
-    // Completely separate layer animation triggered by bottom of bottompara
-    gsap.timeline({
+    // Create a separate trigger for the cards visibility
+    const cardsTrigger = gsap.timeline({
       scrollTrigger: {
         trigger: ".bottompara",
-        start: "bottom 95%", // When bottom of bottompara is 95% visible
-        end: "bottom 60%",
+        start: "bottom 90%", // Trigger when bottom of bottompara is 90% visible
+        end: "bottom 70%",
         scrub: true,
-        onUpdate: (self) => {
-          // Debug log to see if trigger is working
-          console.log("Layer trigger progress:", self.progress);
-        }
       },
-    }).to(".layer", {
+    });
+
+    // Create a separate trigger for the layer animation based on bottompara bottom
+    const layerTrigger = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".bottompara",
+        start: "bottom 90%", // Trigger when bottom of bottompara is 90% visible
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
+
+    // Layer animation: move the layer horizontally into position
+    layerTrigger.to(".layer", {
       x: 0,
-      duration: 0.6,
+      duration: 0.6, // Slower transition
       onComplete: () => {
         gsap.to(".maintext", {
           scale: 0,
@@ -84,6 +77,14 @@ const Size = () => {
     .to(".layer", {
       scale: 0.5,
       duration: 0.4,
+      ease: "power2.out",
+    });
+
+    // Separate animation for cards that triggers when they're fully visible
+    cardsTrigger.to('.columns', {
+      opacity: 1,
+      y: -60, // Reduced movement for better positioning
+      duration: 0.8,
       ease: "power2.out",
     });
   }, []);
