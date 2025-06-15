@@ -33,24 +33,13 @@ const Size = () => {
     const cardsTrigger = gsap.timeline({
       scrollTrigger: {
         trigger: ".bottompara",
-        start: "bottom 90%", // Trigger when bottom of bottompara is 90% visible
-        end: "bottom 70%",
+        start: "bottom 100%", // Trigger when bottom of cards is 90% visible
+        end: "bottom 100%",
         scrub: true,
       },
     });
-
-    // Create a separate trigger for the layer animation based on bottompara bottom
-    const layerTrigger = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".bottompara",
-        start: "bottom 90%", // Trigger when bottom of bottompara is 90% visible
-        end: "bottom 50%",
-        scrub: true,
-      },
-    });
-
-    // Layer animation: move the layer horizontally into position
-    layerTrigger.to(".layer", {
+    // First animation: move the layer horizontally into position
+    tl.to(".layer", {
       x: 0,
       duration: 0.6, // Slower transition
       onComplete: () => {
@@ -79,7 +68,6 @@ const Size = () => {
       duration: 0.4,
       ease: "power2.out",
     });
-
     // Separate animation for cards that triggers when they're fully visible
     cardsTrigger.to('.columns', {
       opacity: 1,
