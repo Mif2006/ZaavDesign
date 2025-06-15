@@ -24,7 +24,7 @@ const Size = () => {
       scrollTrigger: {
         trigger: sizeTrigger.current,
         start: "top top",
-        end: "+=120%", // Extended to give more scroll space
+        end: "+=200%", // Much more scroll space to see all content
         scrub: true,
         pin: true,
       },
@@ -49,8 +49,8 @@ const Size = () => {
     gsap.timeline({
       scrollTrigger: {
         trigger: ".bottompara",
-        start: "bottom 95%", // When bottom of bottompara is 95% visible
-        end: "bottom 60%",
+        start: "bottom 100%", // When bottom of bottompara is fully visible
+        end: "bottom 80%",
         scrub: true,
         onUpdate: (self) => {
           // Debug log to see if trigger is working
