@@ -33,7 +33,7 @@ const Size = () => {
     const cardsTrigger = gsap.timeline({
       scrollTrigger: {
         trigger: cardsRef.current,
-        start: "bottom 90%", // Trigger when bottom of cards is 90% visible
+        start: "bottom 100%", // Trigger when bottom of cards is 90% visible
         end: "bottom 70%",
         scrub: true,
       },
