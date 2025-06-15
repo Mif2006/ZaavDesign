@@ -16,17 +16,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Size = () => {
   const sizeTrigger = useRef(null);
-  const cardsRef = useRef(null);
 
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: cardsRef.current,
-        start: "bottom bottom",
+        trigger: sizeTrigger.current,
+        start: "top top",
         end: "+=100%",
         scrub: true,
         pin: true,
-        pinSpacing: false,
       },
     });
 
@@ -140,7 +138,7 @@ const Size = () => {
       </div>
      
       {/* Responsive Cards Grid - Moved closer up */}
-      <div ref={cardsRef} className="columns opacity-0 flex items-center justify-center px-4 md:px-8 text-white w-full z-5 mt-4 md:mt-8"> 
+      <div className="columns opacity-0 flex items-center justify-center px-4 md:px-8 text-white w-full z-5 mt-4 md:mt-8"> 
         <div className="grid w-full max-w-7xl grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
           <div className="card flex flex-col gap-3 md:gap-4 text-center p-4 md:p-6 bg-transparent border border-purple-500 rounded-lg shadow-lg transition-transform duration-500 scale-[1] hover:scale-[1.05] md:hover:scale-[1.1]">
             <div className="flex justify-center mb-2">
