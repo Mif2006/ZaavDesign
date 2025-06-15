@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { Ruler, Search, CheckCircle, AlertCircle } from 'lucide-react';
 import IMG1 from '../assets/images/IMG_4795.jpg';
 import IMG2 from '../assets/images/IMG_4797.jpg';
 import IMG3 from '../assets/images/IMG_4798.jpg';
@@ -21,7 +22,7 @@ const Size = () => {
       scrollTrigger: {
         trigger: sizeTrigger.current,
         start: "top top",
-        end: "+=100%", // Adjust based on how much scroll space you want
+        end: "+=100%",
         scrub: true,
         pin: true,
       },
@@ -69,69 +70,141 @@ const Size = () => {
   return (
     <section
       ref={sizeTrigger}
-      className="relative bg-zinc flex flex-col items-center justify-center gap-12 py-12 items-center min-h-screen bg-gradient-to-bl from-black via-purple-900/20 to-black min-w-screen w-full"
+      className="relative bg-zinc flex flex-col items-center justify-center gap-6 md:gap-12 py-6 md:py-12 items-center min-h-screen bg-gradient-to-bl from-black via-purple-900/20 to-black min-w-screen w-full"
     >
-       {/* Animated background elements */}
-       {/* <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-[500px] h-[500px] top-1/4 left-1/4 rounded-full bg-pink-500/20 blur-3xl animate-pulse"></div>
-        <div className="absolute w-[300px] h-[300px] bottom-1/4 right-1/4 rounded-full bg-purple-500/20 blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute w-[400px] h-[400px] top-1/2 left-1/2 rounded-full bg-yellow-500/10 blur-3xl animate-pulse delay-2000"></div>
-      </div> */}
-      <h1 className="text-8xl font-semibold z-[4] text-center text-indigo-500 white">Как Узнать Размер?</h1>
+      {/* Title */}
+      <div className="flex items-center gap-4 mb-4 md:mb-8">
+        <Ruler className="text-indigo-500 w-8 h-8 md:w-12 md:h-12" />
+        <h1 className="text-4xl md:text-6xl lg:text-8xl font-semibold z-[4] text-center text-indigo-500">
+          Как Узнать Размер?
+        </h1>
+        <Ruler className="text-indigo-500 w-8 h-8 md:w-12 md:h-12 rotate-180" />
+      </div>
 
-      <p className="maintext text-white w-[82vw] md:w-[62vw] pt-6 text-center z-[4] text-[20px]">
-        Перед приобретением кольца необходимо знать его точный размер. Это маленькое украшение способно доставить массу хлопот, если окажется мало. А когда изделие немножко велико, оно может незаметно ускользнуть от своего владельца. Поэтому кольцо - такой аксессуар, с размером которого нельзя экспериментировать.
-      </p>
+      {/* Enhanced Main Text */}
+      <div className="maintext bg-gradient-to-r from-purple-900/30 to-indigo-900/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-purple-500/30 shadow-2xl max-w-4xl mx-4">
+        <div className="flex items-start gap-4 mb-4">
+          <Search className="text-purple-400 w-6 h-6 md:w-8 md:h-8 flex-shrink-0 mt-1" />
+          <div>
+            <h3 className="text-xl md:text-2xl font-semibold text-purple-300 mb-3">
+              Важность правильного размера
+            </h3>
+            <p className="text-white text-sm md:text-lg lg:text-xl leading-relaxed">
+              Перед приобретением кольца необходимо знать его точный размер. Это маленькое украшение способно доставить массу хлопот, если окажется мало. А когда изделие немножко велико, оно может незаметно ускользнуть от своего владельца. Поэтому кольцо - такой аксессуар, с размером которого нельзя экспериментировать.
+            </p>
+          </div>
+        </div>
+      </div>
 
-      <p className="paragraphs text-white w-[85vw] md:w-[65vw] pt-6 text-center z-[4] text-[20px]">
-        Самый надежный и верный способ - прийти в любой ювелирный магазин и попросить специалиста измерить ваш палец и подобрать подходящий размер кольца. Как правило, шаг градации в размерах составляет 0,5 – в ювелирных магазинах вы увидите размеры 16, затем 16,5, затем 17 и так далее. Теперь, когда вы будете знать свой размер, вы можете смело отправлять нам заявку на колечко вашей мечты.
-        <br/><br/>
-        Также существует несколько способов, которыми можно измерить размер пальца для кольца, не покидая пределов квартиры.
-        <br/><br/>
-        !!! Но важно отметить, что самостоятельное измерение в домашних условиях не дают гарантии в том, что украшение подойдет идеально по размеру. Так как следует учитывать следующие нюансы:
-        <ul className="list-disc list-inside">
-          <li>не стоит замерять пальцы в жаркие дни</li>
-          <li>и также после активных занятий спортом</li>
-        </ul>
-      </p>
+      {/* Enhanced Paragraphs */}
+      <div className="paragraphs bg-gradient-to-r from-indigo-900/30 to-purple-900/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-indigo-500/30 shadow-2xl max-w-5xl mx-4">
+        <div className="space-y-6">
+          <div className="flex items-start gap-4">
+            <CheckCircle className="text-green-400 w-6 h-6 md:w-8 md:h-8 flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl md:text-2xl font-semibold text-green-300 mb-3">
+                Профессиональный способ
+              </h3>
+              <p className="text-white text-sm md:text-lg lg:text-xl leading-relaxed">
+                Самый надежный и верный способ - прийти в любой ювелирный магазин и попросить специалиста измерить ваш палец и подобрать подходящий размер кольца. Как правило, шаг градации в размерах составляет 0,5 – в ювелирных магазинах вы увидите размеры 16, затем 16,5, затем 17 и так далее.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <AlertCircle className="text-yellow-400 w-6 h-6 md:w-8 md:h-8 flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl md:text-2xl font-semibold text-yellow-300 mb-3">
+                Домашние методы измерения
+              </h3>
+              <p className="text-white text-sm md:text-lg lg:text-xl leading-relaxed mb-4">
+                Также существует несколько способов, которыми можно измерить размер пальца для кольца, не покидая пределов квартиры.
+              </p>
+              <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-4">
+                <p className="text-red-200 text-sm md:text-base font-medium mb-2">
+                  ⚠️ Важно отметить:
+                </p>
+                <p className="text-white text-sm md:text-base leading-relaxed mb-3">
+                  Самостоятельное измерение в домашних условиях не дают гарантии в том, что украшение подойдет идеально по размеру. Следует учитывать следующие нюансы:
+                </p>
+                <ul className="list-disc list-inside text-white text-sm md:text-base space-y-1">
+                  <li>не стоит замерять пальцы в жаркие дни</li>
+                  <li>и также после активных занятий спортом</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
      
-      <div className="columns opacity-0  flex items-center justify-center gap-12 px-8 text-white w-full z-5"> 
-        <div className="grid w-[50%] h-full grid-cols-1 md:grid-cols-2 flex items-center justify-center gap-12 px-8">
-          <div className="card flex items-center justify-center max-w-[75vw] md:max-w-[25vw] transition-transform duration-500 scale-[1] hover:scale-[1.1] flex flex-col gap-4 text-center p-6 bg-transparent border border-purple-500 rounded-lg shadow-lg">
-            <h2 className="text-3xl font-semibold text-white">Итак, измеряем размер пальчика</h2>
-            <p className="text-white">
+      {/* Responsive Cards Grid */}
+      <div className="columns opacity-0 flex items-center justify-center px-4 md:px-8 text-white w-full z-5"> 
+        <div className="grid w-full max-w-7xl grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+          <div className="card flex flex-col gap-4 text-center p-4 md:p-6 bg-transparent border border-purple-500 rounded-lg shadow-lg transition-transform duration-500 scale-[1] hover:scale-[1.05] md:hover:scale-[1.1]">
+            <div className="flex justify-center mb-2">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-purple-500/20 rounded-full flex items-center justify-center">
+                <Search className="w-6 h-6 md:w-8 md:h-8 text-purple-400" />
+              </div>
+            </div>
+            <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-white">
+              Измеряем размер пальчика
+            </h2>
+            <p className="text-white text-sm md:text-base leading-relaxed">
               Если у вас есть уже кольцо, возьмите украшение и обведите карандашом по внутренней стороне. А затем замерьте диаметр получившегося круга.
             </p>
           </div>
-          <div className="card flex flex-col gap-4 text-center p-6 bg-transparent transition-transform duration-500 scale-[1] hover:scale-[1.1] border border-purple-500 rounded-lg shadow-lg">
-            <h2 className="text-3xl font-semibold text-white">Измерение пальца дома</h2>
-            <p className="text-white">
+
+          <div className="card flex flex-col gap-4 text-center p-4 md:p-6 bg-transparent border border-purple-500 rounded-lg shadow-lg transition-transform duration-500 scale-[1] hover:scale-[1.05] md:hover:scale-[1.1]">
+            <div className="flex justify-center mb-2">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-indigo-500/20 rounded-full flex items-center justify-center">
+                <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-indigo-400" />
+              </div>
+            </div>
+            <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-white">
+              Измерение пальца дома
+            </h2>
+            <p className="text-white text-sm md:text-base leading-relaxed">
               Измеряйте палец в конце дня, когда он немного расширен. Не рекомендуется проводить замеры после активных физических нагрузок или в холодное время суток.
             </p>
           </div>
-          <div className="card flex flex-col gap-4 text-center p-6 bg-transparent transition-transform duration-500 scale-[1] hover:scale-[1.1] border border-purple-500 rounded-lg shadow-lg">
-            <h2 className="text-3xl font-semibold text-white">Определение размера кольца</h2>
-            <p className="text-white">
+
+          <div className="card flex flex-col gap-4 text-center p-4 md:p-6 bg-transparent border border-purple-500 rounded-lg shadow-lg transition-transform duration-500 scale-[1] hover:scale-[1.05] md:hover:scale-[1.1]">
+            <div className="flex justify-center mb-2">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-green-500/20 rounded-full flex items-center justify-center">
+                <Ruler className="w-6 h-6 md:w-8 md:h-8 text-green-400" />
+              </div>
+            </div>
+            <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-white">
+              Определение размера кольца
+            </h2>
+            <p className="text-white text-sm md:text-base leading-relaxed">
               Чтобы узнать размер кольца, можно воспользоваться специальными кольцемерами, которые доступны в ювелирных магазинах. Каждый ювелир поможет вам подобрать правильный размер.
             </p>
           </div>
-          <div className="card flex flex-col gap-4 text-center p-6 bg-transparent transition-transform duration-500 scale-[1] hover:scale-[1.1] border border-purple-500 rounded-lg shadow-lg">
-            <h2 className="text-3xl font-semibold text-white">Измерение пальца дома</h2>
-            <p className="text-white">
+
+          <div className="card flex flex-col gap-4 text-center p-4 md:p-6 bg-transparent border border-purple-500 rounded-lg shadow-lg transition-transform duration-500 scale-[1] hover:scale-[1.05] md:hover:scale-[1.1]">
+            <div className="flex justify-center mb-2">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-yellow-500/20 rounded-full flex items-center justify-center">
+                <AlertCircle className="w-6 h-6 md:w-8 md:h-8 text-yellow-400" />
+              </div>
+            </div>
+            <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-white">
+              Измерение по диаметру
+            </h2>
+            <p className="text-white text-sm md:text-base leading-relaxed">
               Если у вас есть кольцо, которое хорошо сидит, вы можете измерить его диаметр и обратиться в ювелирный магазин, чтобы узнать точный размер по диаметру.
             </p>
           </div>
         </div>
       </div>
 
-
+      {/* Background Layer */}
       <div
         style={{ backgroundImage: `url(${IMG6})` }}
         className="z-[8] bg-cover bg-center layer absolute left-0 top-0 translate-x-[100%] w-screen h-screen"
       >
         <div className="absolute w-full h-full inset-0 bg-black opacity-20" />
       </div>
-
     </section>
   );
 };
