@@ -107,7 +107,7 @@ const Size = () => {
       </div>
 
       {/* Enhanced Paragraphs */}
-      <div className="paragraphs bg-gradient-to-r from-indigo-900/30 to-purple-900/30 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 border border-indigo-500/30 shadow-2xl max-w-6xl mx-4">
+      <div className="bottompara paragraphs bg-gradient-to-r from-indigo-900/30 to-purple-900/30 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 border border-indigo-500/30 shadow-2xl max-w-6xl mx-4">
         <div className="space-y-4 md:space-y-6">
           <div className="flex items-start gap-3 md:gap-4">
             <CheckCircle className="text-green-400 w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 flex-shrink-0 mt-1" />
