@@ -16,21 +16,32 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Size = () => {
   const sizeTrigger = useRef(null);
+  const cardsRef = useRef(null);
 
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sizeTrigger.current,
         start: "top top",
-        end: "+=100%",
+        end: "+=120%", // Extended to give more scroll space
         scrub: true,
         pin: true,
       },
     });
 
+    // Create a separate trigger for the cards visibility
+    const cardsTrigger = gsap.timeline({
+      scrollTrigger: {
+        trigger: cardsRef.current,
+        start: "bottom 90%", // Trigger when bottom of cards is 90% visible
+        end: "bottom 70%",
+        scrub: true,
+      },
+    });
     // First animation: move the layer horizontally into position
     tl.to(".layer", {
       x: 0,
+      duration: 0.6, // Slower transition
       onComplete: () => {
         gsap.to(".maintext", {
           scale: 0,
@@ -39,11 +50,6 @@ const Size = () => {
         gsap.to(".paragraphs", {
           scale: 0,
           opacity: 0,
-        });
-        gsap.to('.columns', {
-          opacity: 1,
-          delay: 1,
-          y: -80
         });
       },
       onReverseComplete: () => {
@@ -55,14 +61,18 @@ const Size = () => {
           scale: 1,
           opacity: 1,
         });
-        gsap.to('.columns', {
-          opacity: 0,
-          y: 0
-        });
       },
     })
     .to(".layer", {
       scale: 0.5,
+      duration: 0.4,
+      ease: "power2.out",
+    });
+    // Separate animation for cards that triggers when they're fully visible
+    cardsTrigger.to('.columns', {
+      opacity: 1,
+      y: -60, // Reduced movement for better positioning
+      duration: 0.8,
       ease: "power2.out",
     });
   }, []);
@@ -138,7 +148,7 @@ const Size = () => {
       </div>
      
       {/* Responsive Cards Grid - Moved closer up */}
-      <div className="columns opacity-0 flex items-center justify-center px-4 md:px-8 text-white w-full z-5 mt-4 md:mt-8"> 
+      <div ref={cardsRef} className="columns opacity-0 flex items-center justify-center px-4 md:px-8 text-white w-full z-5 mt-6 md:mt-12"> 
         <div className="grid w-full max-w-7xl grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
           <div className="card flex flex-col gap-3 md:gap-4 text-center p-4 md:p-6 bg-transparent border border-purple-500 rounded-lg shadow-lg transition-transform duration-500 scale-[1] hover:scale-[1.05] md:hover:scale-[1.1]">
             <div className="flex justify-center mb-2">
