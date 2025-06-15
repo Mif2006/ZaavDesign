@@ -43,7 +43,7 @@ const Size = () => {
         gsap.to('.columns', {
           opacity: 1,
           delay: 1,
-          y: -120
+          y: -80
         });
       },
       onReverseComplete: () => {
@@ -70,26 +70,26 @@ const Size = () => {
   return (
     <section
       ref={sizeTrigger}
-      className="relative bg-zinc flex flex-col items-center justify-center gap-6 md:gap-12 py-6 md:py-12 items-center min-h-screen bg-gradient-to-bl from-black via-purple-900/20 to-black min-w-screen w-full"
+      className="relative bg-zinc flex flex-col items-center justify-center gap-4 md:gap-8 py-4 md:py-8 items-center min-h-screen bg-gradient-to-bl from-black via-purple-900/20 to-black min-w-screen w-full"
     >
       {/* Title */}
-      <div className="flex items-center gap-4 mb-4 md:mb-8">
-        <Ruler className="text-indigo-500 w-8 h-8 md:w-12 md:h-12" />
-        <h1 className="text-4xl md:text-6xl lg:text-8xl font-semibold z-[4] text-center text-indigo-500">
+      <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-4">
+        <Ruler className="text-indigo-500 w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12" />
+        <h1 className="text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-semibold z-[4] text-center text-indigo-500">
           Как Узнать Размер?
         </h1>
-        <Ruler className="text-indigo-500 w-8 h-8 md:w-12 md:h-12 rotate-180" />
+        <Ruler className="text-indigo-500 w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12 rotate-180" />
       </div>
 
       {/* Enhanced Main Text */}
-      <div className="maintext bg-gradient-to-r from-purple-900/30 to-indigo-900/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-purple-500/30 shadow-2xl max-w-4xl mx-4">
-        <div className="flex items-start gap-4 mb-4">
-          <Search className="text-purple-400 w-6 h-6 md:w-8 md:h-8 flex-shrink-0 mt-1" />
+      <div className="maintext bg-gradient-to-r from-purple-900/30 to-indigo-900/30 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 border border-purple-500/30 shadow-2xl max-w-5xl mx-4">
+        <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
+          <Search className="text-purple-400 w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 flex-shrink-0 mt-1" />
           <div>
-            <h3 className="text-xl md:text-2xl font-semibold text-purple-300 mb-3">
+            <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-purple-300 mb-2 md:mb-3">
               Важность правильного размера
             </h3>
-            <p className="text-white text-sm md:text-lg lg:text-xl leading-relaxed">
+            <p className="text-white text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed">
               Перед приобретением кольца необходимо знать его точный размер. Это маленькое украшение способно доставить массу хлопот, если окажется мало. А когда изделие немножко велико, оно может незаметно ускользнуть от своего владельца. Поэтому кольцо - такой аксессуар, с размером которого нельзя экспериментировать.
             </p>
           </div>
@@ -97,34 +97,34 @@ const Size = () => {
       </div>
 
       {/* Enhanced Paragraphs */}
-      <div className="paragraphs bg-gradient-to-r from-indigo-900/30 to-purple-900/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-indigo-500/30 shadow-2xl max-w-5xl mx-4">
-        <div className="space-y-6">
-          <div className="flex items-start gap-4">
-            <CheckCircle className="text-green-400 w-6 h-6 md:w-8 md:h-8 flex-shrink-0 mt-1" />
+      <div className="paragraphs bg-gradient-to-r from-indigo-900/30 to-purple-900/30 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 border border-indigo-500/30 shadow-2xl max-w-6xl mx-4">
+        <div className="space-y-4 md:space-y-6">
+          <div className="flex items-start gap-3 md:gap-4">
+            <CheckCircle className="text-green-400 w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 flex-shrink-0 mt-1" />
             <div>
-              <h3 className="text-xl md:text-2xl font-semibold text-green-300 mb-3">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-green-300 mb-2 md:mb-3">
                 Профессиональный способ
               </h3>
-              <p className="text-white text-sm md:text-lg lg:text-xl leading-relaxed">
+              <p className="text-white text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed">
                 Самый надежный и верный способ - прийти в любой ювелирный магазин и попросить специалиста измерить ваш палец и подобрать подходящий размер кольца. Как правило, шаг градации в размерах составляет 0,5 – в ювелирных магазинах вы увидите размеры 16, затем 16,5, затем 17 и так далее.
               </p>
             </div>
           </div>
 
-          <div className="flex items-start gap-4">
-            <AlertCircle className="text-yellow-400 w-6 h-6 md:w-8 md:h-8 flex-shrink-0 mt-1" />
+          <div className="flex items-start gap-3 md:gap-4">
+            <AlertCircle className="text-yellow-400 w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 flex-shrink-0 mt-1" />
             <div>
-              <h3 className="text-xl md:text-2xl font-semibold text-yellow-300 mb-3">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-yellow-300 mb-2 md:mb-3">
                 Домашние методы измерения
               </h3>
-              <p className="text-white text-sm md:text-lg lg:text-xl leading-relaxed mb-4">
+              <p className="text-white text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed mb-3 md:mb-4">
                 Также существует несколько способов, которыми можно измерить размер пальца для кольца, не покидая пределов квартиры.
               </p>
-              <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-4">
+              <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-3 md:p-4">
                 <p className="text-red-200 text-sm md:text-base font-medium mb-2">
                   ⚠️ Важно отметить:
                 </p>
-                <p className="text-white text-sm md:text-base leading-relaxed mb-3">
+                <p className="text-white text-sm md:text-base leading-relaxed mb-2 md:mb-3">
                   Самостоятельное измерение в домашних условиях не дают гарантии в том, что украшение подойдет идеально по размеру. Следует учитывать следующие нюансы:
                 </p>
                 <ul className="list-disc list-inside text-white text-sm md:text-base space-y-1">
@@ -137,13 +137,13 @@ const Size = () => {
         </div>
       </div>
      
-      {/* Responsive Cards Grid */}
-      <div className="columns opacity-0 flex items-center justify-center px-4 md:px-8 text-white w-full z-5"> 
+      {/* Responsive Cards Grid - Moved closer up */}
+      <div className="columns opacity-0 flex items-center justify-center px-4 md:px-8 text-white w-full z-5 mt-4 md:mt-8"> 
         <div className="grid w-full max-w-7xl grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-          <div className="card flex flex-col gap-4 text-center p-4 md:p-6 bg-transparent border border-purple-500 rounded-lg shadow-lg transition-transform duration-500 scale-[1] hover:scale-[1.05] md:hover:scale-[1.1]">
+          <div className="card flex flex-col gap-3 md:gap-4 text-center p-4 md:p-6 bg-transparent border border-purple-500 rounded-lg shadow-lg transition-transform duration-500 scale-[1] hover:scale-[1.05] md:hover:scale-[1.1]">
             <div className="flex justify-center mb-2">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-purple-500/20 rounded-full flex items-center justify-center">
-                <Search className="w-6 h-6 md:w-8 md:h-8 text-purple-400" />
+              <div className="w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 bg-purple-500/20 rounded-full flex items-center justify-center">
+                <Search className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-purple-400" />
               </div>
             </div>
             <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-white">
@@ -154,10 +154,10 @@ const Size = () => {
             </p>
           </div>
 
-          <div className="card flex flex-col gap-4 text-center p-4 md:p-6 bg-transparent border border-purple-500 rounded-lg shadow-lg transition-transform duration-500 scale-[1] hover:scale-[1.05] md:hover:scale-[1.1]">
+          <div className="card flex flex-col gap-3 md:gap-4 text-center p-4 md:p-6 bg-transparent border border-purple-500 rounded-lg shadow-lg transition-transform duration-500 scale-[1] hover:scale-[1.05] md:hover:scale-[1.1]">
             <div className="flex justify-center mb-2">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-indigo-500/20 rounded-full flex items-center justify-center">
-                <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-indigo-400" />
+              <div className="w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 bg-indigo-500/20 rounded-full flex items-center justify-center">
+                <CheckCircle className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-indigo-400" />
               </div>
             </div>
             <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-white">
@@ -168,10 +168,10 @@ const Size = () => {
             </p>
           </div>
 
-          <div className="card flex flex-col gap-4 text-center p-4 md:p-6 bg-transparent border border-purple-500 rounded-lg shadow-lg transition-transform duration-500 scale-[1] hover:scale-[1.05] md:hover:scale-[1.1]">
+          <div className="card flex flex-col gap-3 md:gap-4 text-center p-4 md:p-6 bg-transparent border border-purple-500 rounded-lg shadow-lg transition-transform duration-500 scale-[1] hover:scale-[1.05] md:hover:scale-[1.1]">
             <div className="flex justify-center mb-2">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-green-500/20 rounded-full flex items-center justify-center">
-                <Ruler className="w-6 h-6 md:w-8 md:h-8 text-green-400" />
+              <div className="w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 bg-green-500/20 rounded-full flex items-center justify-center">
+                <Ruler className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-green-400" />
               </div>
             </div>
             <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-white">
@@ -182,10 +182,10 @@ const Size = () => {
             </p>
           </div>
 
-          <div className="card flex flex-col gap-4 text-center p-4 md:p-6 bg-transparent border border-purple-500 rounded-lg shadow-lg transition-transform duration-500 scale-[1] hover:scale-[1.05] md:hover:scale-[1.1]">
+          <div className="card flex flex-col gap-3 md:gap-4 text-center p-4 md:p-6 bg-transparent border border-purple-500 rounded-lg shadow-lg transition-transform duration-500 scale-[1] hover:scale-[1.05] md:hover:scale-[1.1]">
             <div className="flex justify-center mb-2">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-yellow-500/20 rounded-full flex items-center justify-center">
-                <AlertCircle className="w-6 h-6 md:w-8 md:h-8 text-yellow-400" />
+              <div className="w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 bg-yellow-500/20 rounded-full flex items-center justify-center">
+                <AlertCircle className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-yellow-400" />
               </div>
             </div>
             <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-white">
