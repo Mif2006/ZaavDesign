@@ -86,7 +86,7 @@ const Size = () => {
       <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-4">
         <Ruler className="text-indigo-500 w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12" />
         <h1 className="text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-semibold z-[4] text-center text-indigo-500">
-          Как Узнать Размер?
+          Как Узна
         </h1>
         <Ruler className="text-indigo-500 w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12 rotate-180" />
       </div>
