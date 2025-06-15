@@ -34,7 +34,7 @@ const Size = () => {
       scrollTrigger: {
         trigger: ".bottompara",
         start: "bottom 100%", // Trigger when bottom of cards is 90% visible
-        end: "bottom 70%",
+        end: "bottom 100%",
         scrub: true,
       },
     });
