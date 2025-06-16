@@ -36,7 +36,7 @@ const TechMotion = ({
       wrapper,
       { height: "40px" },
       {
-        height: "300px",
+        height: "600px",
         duration: 1,
         scrollTrigger: {
           trigger: wrapper,
@@ -74,30 +74,31 @@ const TechMotion = ({
   return (
     <motion.div
       ref={wrapperRef}
-      className="rounded-[20px] cursor-pointer w-[280px] h-[200px] sm:w-[320px] sm:h-[220px] md:w-[350px] md:h-[240px] lg:w-[380px] lg:h-[260px] overflow-hidden bg-gray-800 bg-cover bg-center p-2 flex-center flex-row relative"
+      className="rounded-[40px] mt-20 md:mt-10 lg:mt-0 absolute top-[21%] cursor-pointer w-[320px] h-[420px] md:w-[300px] lg:h-[660px] overflow-hidden bg-gray-800 bg-cover bg-center p-2 flex-center flex-col md:flex-row gap-0 md:gap-4 lg:gap-12"
       onClick={handleClick}
-      initial="static"
+      initial="center"
       animate={animate}
       variants={variants}
       transition={{ duration: 0.5 }}
       style={{
+        width: "42%",
         backgroundImage: `url(${src})`,
       }}
     >
       <div ref={blockRef} className="z-[10] bg-black opacity-0 absolute inset-0 w-full h-full" />
-      <div className="flex flex-row items-center justify-between w-full gap-2 md:gap-3 z-[10] relative px-4">
-        <div className="flex items-center justify-start w-full">
+      <div className="flex flex-col gap-3 md:gap-5 z-[10] relative">
+        <div className="absolute inset-0 w-full h-full flex items-center justify-center">
           <h3
-            className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] text-white text-left font-extrabold tracking-wider leading-tight shadow-md"
+            className="text-[24px] md:text-5xl text-white text-center md:text-left font-extrabold tracking-wider leading-tight shadow-md"
             ref={nameRef}
           >
             {name}
           </h3>
         </div>
-        <div className="flex items-center justify-end">
+        <div className="absolute inset-0 w-full h-full flex items-center justify-center">
           <button
             ref={buttonRef}
-            className="text-[12px] sm:text-[14px] md:text-[16px] whitespace-nowrap font-semibold text-white bg-indigo-500 px-3 py-2 md:px-4 md:py-2 rounded-lg opacity-0 transition-transform scale-80 ease-in-out"
+            className="text-[20px] whitespace-nowrap font-semibold  md:text-[24px] font-semibold text-white bg-indigo-500 px-7 py-4 rounded-lg opacity-0 transition-transfor scale-80  ease-in-out"
           >
             В Каталог
           </button>

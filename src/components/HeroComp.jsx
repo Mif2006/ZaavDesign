@@ -107,31 +107,29 @@ const ImageSlider = () => {
   ];
 
   return (
-    <div className="relative bg-gradient-to-br from-black via-purple-900/20 to-black py-20 min-h-screen w-screen overflow-hidden" id="tech">
+    <div
+      className="flex items-center justify-center py-[100vh] relative bg-gradient-to-br from-black via-purple-900/20 z-[40] to-black  bg-cover bg-center flex-col gap-2 md:gap-4 pt-28 justify-center bg-transparent min-h-screen w-screen"
+      id="tech"
+    >
       <div className="flex z-[24] flex-col items-center gap-2 text-center">
-        <h1 className="bestsellers-title text-6xl md:text-8xl font-bold font-playfair text-transparent bg-clip-text bg-gradient-to-tr from-purple-600 to-indigo-500 mb-16">
+        <h1 className="bestsellers-title absolute top-[5vh] text-8xl font-bold font-playfair text-transparent bg-clip-text bg-gradient-to-tr from-purple-600 to-indigo-500">
           Бестселлеры.
         </h1>
       </div>
       
-      <div className="flex items-center justify-center w-full px-4">
-        <div className="flex gap-4 md:gap-6 lg:gap-8 overflow-x-auto scrollbar-hide w-full max-w-7xl">
-          {imagesArray.map((image, index) => (
-            <div key={index} className="flex-shrink-0">
-              <TechMotion
-                src={image.src}
-                name={image.name}
-                animate="static"
-                variants={imageVariants}
-                handleClick={() => handleClick(index)}
-                details={image.details}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+      {imagesArray.map((image, index) => (
+        <TechMotion
+          key={index}
+          src={image.src}
+          name={image.name}
+          animate={positions[positionIndexes[index]]}
+          variants={imageVariants}
+          handleClick={() => handleClick(index)}
+          details={image.details}
+        />
+      ))}
 
-      <div className="flex flex-row items-center justify-center gap-3 md:gap-[10px] mt-12 z-[20]">
+      <div className="absolute bottom-[1vh] flex flex-row items-center gap-3 md:gap-[10px] pb-12 z-[20] mt-[480px] md:mt-[400px]">
         <button
           className="text-white cursor-pointer bg-indigo-400 transition-transform duration-500 scale-[1] hover:scale-[1.1] rounded-[12px] bg-opacity-90 hover:bg-opacity-100 py-2 px-4"
           onClick={() => handleNext(1)}
