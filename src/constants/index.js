@@ -17,7 +17,7 @@ export const points = [
       color: 'text-blue-400',
       title: 'Design',
       description: 'UI/UX design and system architecture.',
-      image: bluepurple1,
+      image: IMG1,
       status: 90,
     },
     {
@@ -25,7 +25,7 @@ export const points = [
       color: 'text-yellow-400',
       title: 'Planning',
       description: 'Project planning and resource allocation.',
-      image: bluepurple2,
+      image: IMG2,
       status: 75,
     },
     {
@@ -33,7 +33,7 @@ export const points = [
       color: 'text-purple-400',
       title: 'Development',
       description: 'Implementation and code development.',
-      image: bluepurple6,
+      image: IMG3,
       status: 60,
     },
     {
@@ -41,7 +41,7 @@ export const points = [
       color: 'text-green-400',
       title: 'Testing',
       description: 'Quality assurance and testing procedures.',
-      image: bluepurple7,
+      image: IMG4,
       status: 45,
     },
     {
@@ -49,7 +49,7 @@ export const points = [
       color: 'text-pink-400',
       title: 'Release',
       description: 'Deployment and release management.',
-      image: bluepurple5,
+      image: IMG5,
       status: 30,
     },
   ];
