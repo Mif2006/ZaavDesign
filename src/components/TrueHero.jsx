@@ -159,6 +159,7 @@ const TrueHero = () => {
         
       </div>
       <div className='yeet hidden md:flex absolute top-50 left-50 z-1 opacity-0 h-[120vh]'>
+      <div className='yeet hidden md:flex absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-1 opacity-0 w-full h-full'>
       {/* <ImageSlider /> */}
       {/* <InsideOfHero /> */}
       <Hero />

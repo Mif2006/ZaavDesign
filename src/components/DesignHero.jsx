@@ -55,8 +55,8 @@ const Hero = () => {
   const handleMoveRight = () => animateVideo('right');
 
   return (
-    <div className="w-screen px-2 h-[120vh] pt-[8vh]">
-      <div className="w-full flex flex-row gap-2 items-center">
+    <div className="w-screen px-2 h-[140vh] md:h-[160vh] flex items-center justify-center pt-[8vh]">
+      <div className="w-full flex flex-row gap-2 items-center justify-center">
         <div className="flex flex-col w-[50vw] gap-2 pt-[2px]">
           <div className="relative overflow-hidden p-4 sm:p-6 md:p-8 flex flex-col lg:flex-row lg:justify-between w-[50vw] h-auto min-h-[35vh] rounded-[37px] bg-gradient-to-br from-gray-300 via-gray-400 to-gray-500">
             {/* Animated gradient overlay */}
