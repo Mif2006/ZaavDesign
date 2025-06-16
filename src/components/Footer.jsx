@@ -111,9 +111,12 @@ const Footer = () => {
 
   const quickLinks = [
     { name: 'Главная', href: '/' },
-    { name: 'Каталог', href: '/catalogue' },
-    { name: 'О нас', href: '#features' },
-    { name: 'Размеры', href: '#size' }
+    { name: 'Особенности', href: '#features' },
+    { name: 'Бестселлеры', href: '#bestsellers' },
+    { name: 'Магазин', href: '#shop' },
+    { name: 'Отзывы', href: '#testimonials' },
+    { name: 'Размеры', href: '#size' },
+    { name: 'Каталог', href: '/catalogue' }
   ];
 
   return (
@@ -147,6 +150,7 @@ const Footer = () => {
             </div>
             
             <p className="text-gray-300 text-sm leading-relaxed max-w-md">
+            <p className="text-gray-100 text-sm leading-relaxed max-w-md">
               Авторские украшения с острова Бали. Каждое изделие создается вручную с особой энергетикой 
               и уникальным дизайном, вдохновленным древними символами и природой.
             </p>
@@ -206,10 +210,10 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-start gap-3 text-sm">
                 <MapPin className="w-4 h-4 text-gray-200 mt-0.5 flex-shrink-0" />
-                <div className="text-gray-300">
+                <div className="text-gray-100">
                   <p>Клементовский пер. 2</p>
                   <p>Москва, Россия</p>
-                  <p className="text-xs text-gray-200 mt-1">м. Новокузнецкая/Третьяковская</p>
+                  <p className="text-xs text-gray-100 mt-1">м. Новокузнецкая/Третьяковская</p>
                 </div>
               </div>
               
@@ -217,7 +221,7 @@ const Footer = () => {
                 <Phone className="w-4 h-4 text-gray-200 flex-shrink-0" />
                 <a 
                   href="tel:+7-xxx-xxx-xxxx" 
-                  className="text-gray-300 hover:text-purple-300 transition-colors"
+                  className="text-gray-100 hover:text-purple-300 transition-colors"
                 >
                   +7 (xxx) xxx-xxxx
                 </a>
@@ -227,7 +231,7 @@ const Footer = () => {
                 <Mail className="w-4 h-4 text-gray-200 flex-shrink-0" />
                 <a 
                   href="mailto:info@zaavg.com" 
-                  className="text-gray-300 hover:text-purple-300 transition-colors"
+                  className="text-gray-100 hover:text-purple-300 transition-colors"
                 >
                   info@zaavg.com
                 </a>
