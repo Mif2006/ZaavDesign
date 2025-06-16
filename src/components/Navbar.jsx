@@ -16,13 +16,13 @@ const Navbar = () => {
     {
       name: "Главная",
       icon: Home,
-      action: () => scrollToSection('hero'),
+      action: () => scrollToSection('truehero'),
       type: 'scroll'
     },
     {
       name: "Особенности",
       icon: Star,
-      action: () => scrollToSection('highlights'),
+      action: () => scrollToSection('features'),
       type: 'scroll'
     },
     {
@@ -68,37 +68,28 @@ const Navbar = () => {
     let targetElement;
     
     switch(sectionId) {
-      case 'hero':
-        targetElement = document.querySelector('section'); // First section (TrueHero)
+      case 'truehero':
+        targetElement = document.querySelector('section') || document.body; // First section (TrueHero)
         break;
-      case 'highlights':
+      case 'features':
         targetElement = document.querySelector('#highlight') || 
-                      document.querySelector('[class*="Highlights"]') ||
-                      document.querySelectorAll('section')[1]; // Second section
+                      document.querySelectorAll('section')[2]; // Features section (after Highlights)
         break;
       case 'bestsellers':
-        targetElement = document.querySelector('#tech') || 
-                      document.querySelector('[class*="ImageSlider"]') ||
+        targetElement = document.querySelector('#bestsellers') || 
                       document.querySelectorAll('section')[3]; // ImageSlider section
         break;
       case 'shop':
-        targetElement = document.querySelector('[class*="Shop"]') ||
-                      document.querySelectorAll('section')[4]; // Shop section
+        targetElement = document.querySelectorAll('section')[4]; // Shop section
         break;
       case 'testimonials':
-        targetElement = document.querySelector('[class*="Testimonials"]') ||
-                      document.querySelectorAll('section')[5]; // Testimonials section
+        targetElement = document.querySelectorAll('section')[5]; // Testimonials section
         break;
       case 'size':
-        targetElement = document.querySelector('[class*="Size"]') ||
-                      document.querySelectorAll('section')[6]; // Size section
-        break;
-      case 'about':
-        targetElement = document.querySelector('[class*="CircleWithPoints"]') ||
-                      document.querySelectorAll('section')[7]; // CircleWithPoints section
+        targetElement = document.querySelectorAll('section')[6]; // Size section
         break;
       default:
-        targetElement = document.querySelector('section');
+        targetElement = document.querySelector('section') || document.body;
     }
 
     if (targetElement) {

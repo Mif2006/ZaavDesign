@@ -105,6 +105,7 @@ const Size = () => {
 
   return (
     <section
+      id="size"
       ref={sizeTrigger}
       className="relative bg-zinc flex flex-col items-center justify-start gap-4 md:gap-8 py-4 md:py-8 h-[120vh] bg-gradient-to-bl from-black via-purple-900/20 to-black min-w-screen w-full overflow-hidden"
     >

@@ -8,7 +8,7 @@ const Testimonials = () => {
   const { setIsPaused } = useAutoScroll(containerRef);
 
   return (
-    <section className="relative py-20 overflow-hidden bg-gradient-to-br from-black via-purple-900/40 to-black">
+    <section id="testimonials" className="relative py-20 overflow-hidden bg-gradient-to-br from-black via-purple-900/40 to-black">
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px]" />
       
       <div className="container mx-auto px-4 mb-12">

@@ -24,7 +24,7 @@ const Shop = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div id="shop" className="relative w-full h-screen overflow-hidden">
       <video className="absolute top-0 left-0 w-full h-full object-cover" autoPlay muted loop>
         <source src={video} type="video/mp4" />
       </video>

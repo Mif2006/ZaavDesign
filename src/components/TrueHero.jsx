@@ -141,7 +141,7 @@ const TrueHero = () => {
 
   return (
     <>
-    <section ref={triggerRef} style={{backgroundImage: `url(${purple2})`}} className=' bg-cover bg-center w-full flex items-center justify-center min-h-screen h-screen overflow-hidden relative'>
+    <section id="truehero" ref={triggerRef} style={{backgroundImage: `url(${purple2})`}} className=' bg-cover bg-center w-full flex items-center justify-center min-h-screen h-screen overflow-hidden relative'>
       {/* Gradient background */}
   
       <img src={IMG6202} className='hands absolute top-[-43vh] w-[700px] z-[12] rotate-[90deg]' />
