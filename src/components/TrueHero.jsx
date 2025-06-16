@@ -158,7 +158,7 @@ const TrueHero = () => {
         {/* <img src={IMG10} style={{top: "-22%", left: "100%"}} className='  h-full w-full object-cover' /> */}
         
       </div>
-      <div className='yeet hidden md:flex absolute top-50 left-50 z-1 opacity-0'>
+      <div className='yeet hidden md:flex absolute top-50 left-50 z-1 opacity-0 h-[120vh]'>
       {/* <ImageSlider /> */}
       {/* <InsideOfHero /> */}
       <Hero />

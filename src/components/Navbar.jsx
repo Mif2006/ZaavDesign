@@ -11,6 +11,28 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const navRef = useRef(null);
+  const [showNavbar, setShowNavbar] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show navbar after scrolling past the first section (120vh)
+      const scrollPosition = window.scrollY;
+      const firstSectionHeight = window.innerHeight * 1.2; // 120vh
+      
+      if (location.pathname === '/') {
+        setShowNavbar(scrollPosition > firstSectionHeight);
+      } else {
+        setShowNavbar(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    // Initial check
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [location.pathname]);
 
   const navItems = [
     {
@@ -124,7 +146,12 @@ const Navbar = () => {
   return (
     <nav 
       ref={navRef}
-      className='fixed top-0 left-0 right-0 w-full h-[80px] bg-black/80 backdrop-blur-md border-b border-purple-500/20 z-50'
+      className={`fixed top-0 left-0 right-0 w-full h-[80px] bg-black/80 backdrop-blur-md border-b border-purple-500/20 z-50 transition-opacity duration-500 ${
+        showNavbar ? 'opacity-100' : 'opacity-0 pointer-events-none'
+      }`}
+      style={{
+        opacity: showNavbar ? 1 : 0
+      }}
     >
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full'>
         <div className='flex items-center justify-between h-full'>
