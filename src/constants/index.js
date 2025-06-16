@@ -10,48 +10,58 @@ import IMG8 from '../assets/images/IMG_4806.jpg'
 
 import video1 from '../assets/videos/1012.mov'
 import video2 from '../assets/videos/1013.mov'
-import { Brain, Zap, Lightbulb, Radar, Radio } from 'lucide-react'
+import { Gem, Heart, Star, Crown, Sparkles } from 'lucide-react'
 
 export const points = [
     {
-      Icon: Brain,
-      color: 'text-blue-400',
-      title: 'Design',
-      description: 'UI/UX design and system architecture.',
+      Icon: Gem,
+      color: 'text-emerald-400',
+      title: 'Натуральные Камни',
+      description: 'Используем только подлинные драгоценные и полудрагоценные камни с острова Бали.',
       image: IMG1,
-      status: 90,
+      status: 95,
+      date: 'Март 2024',
+      category: 'МАТЕРИАЛЫ'
     },
     {
-      Icon: Zap,
-      color: 'text-yellow-400',
-      title: 'Planning',
-      description: 'Project planning and resource allocation.',
+      Icon: Heart,
+      color: 'text-rose-400',
+      title: 'Ручная Работа',
+      description: 'Каждое украшение создается вручную мастерами с многолетним опытом.',
       image: IMG2,
-      status: 75,
+      status: 100,
+      date: 'Февраль 2024',
+      category: 'МАСТЕРСТВО'
     },
     {
-      Icon: Lightbulb,
+      Icon: Star,
       color: 'text-purple-400',
-      title: 'Development',
-      description: 'Implementation and code development.',
+      title: 'Уникальный Дизайн',
+      description: 'Авторские дизайны, вдохновленные древними символами и природой Бали.',
       image: IMG3,
-      status: 60,
+      status: 88,
+      date: 'Январь 2024',
+      category: 'ДИЗАЙН'
     },
     {
-      Icon: Radar,
-      color: 'text-green-400',
-      title: 'Testing',
-      description: 'Quality assurance and testing procedures.',
+      Icon: Crown,
+      color: 'text-amber-400',
+      title: 'Серебро 925',
+      description: 'Высококачественное серебро 925 пробы с покрытием из золота 24 карата.',
       image: IMG4,
-      status: 45,
+      status: 92,
+      date: 'Декабрь 2023',
+      category: 'КАЧЕСТВО'
     },
     {
-      Icon: Radio,
-      color: 'text-pink-400',
-      title: 'Release',
-      description: 'Deployment and release management.',
+      Icon: Sparkles,
+      color: 'text-cyan-400',
+      title: 'Энергетика Бали',
+      description: 'Украшения заряжены особой энергетикой священного острова Бали.',
       image: IMG5,
-      status: 30,
+      status: 85,
+      date: 'Ноябрь 2023',
+      category: 'ДУХОВНОСТЬ'
     },
   ];
 

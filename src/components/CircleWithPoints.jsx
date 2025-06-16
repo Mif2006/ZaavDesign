@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { CirclePoint } from './CirclePoint';
-import { Radio, X, Zap } from 'lucide-react';
+import { Radio, X, Zap, Gem } from 'lucide-react';
 import { points } from '../constants';
 
 const CircleWithPoints = () => {
@@ -100,13 +100,28 @@ const CircleWithPoints = () => {
   }, [showCard]);
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center">
+    <section className="relative w-full min-h-screen bg-gradient-to-bl from-black via-purple-900/20 to-black flex items-center justify-center py-20">
+      {/* Title Section */}
+      <div className="absolute top-10 left-1/2 transform -translate-x-1/2 text-center z-20">
+        <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-4 justify-center">
+          <Gem className="text-purple-400 w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12" />
+          <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-center text-purple-400">
+            Наши Ценности
+          </h1>
+          <Gem className="text-purple-400 w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12 rotate-180" />
+        </div>
+        <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
+          Откройте для себя философию ZaavG и то, что делает наши украшения особенными
+        </p>
+      </div>
+
+      <div className="relative w-full h-full flex items-center justify-center mt-20">
       <div className={`absolute z-10 text-center pointer-events-none transition-opacity duration-500 ${selectedPoint !== null ? 'opacity-0' : 'opacity-100'}`}>
-        <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-light tracking-wider">
-          CELESTIAL
+        <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-light tracking-wider">
+          ZAAVG
         </h1>
         <p className="text-gray-400 mt-2 text-sm md:text-base font-light tracking-widest">
-          INTERFACE
+          PHILOSOPHY
         </p>
       </div>
 
@@ -115,8 +130,8 @@ const CircleWithPoints = () => {
         className="relative w-[320px] h-[320px] sm:w-[440px] sm:h-[440px] md:w-[540px] md:h-[540px] lg:w-[640px] lg:h-[640px]"
       >
         <div className="absolute inset-0 rounded-full border border-gray-400 opacity-60"></div>
-        <div className="absolute inset-1 rounded-full border border-gray-300 opacity-30 blur-[1px]"></div>
-        <div className="absolute -inset-1 rounded-full border border-gray-200 opacity-10 blur-[2px]"></div>
+        <div className="absolute inset-1 rounded-full border border-purple-300 opacity-30 blur-[1px]"></div>
+        <div className="absolute -inset-1 rounded-full border border-purple-200 opacity-10 blur-[2px]"></div>
 
         {points.map((point, index) => {
           const angle = (index * (360 / points.length)) * (Math.PI / 180);
@@ -140,9 +155,14 @@ const CircleWithPoints = () => {
         <div
           ref={cardRef}
           className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-[340px] bg-cover bg-center"
-          style={{ marginTop: '-40px', transformOrigin: 'center center',  }}
+          style={{ marginTop: '-40px', transformOrigin: 'center center' }}
         >
-          <div className="relative backdrop-blur-xl  bg-cover bg-center rounded-2xl py-12 p-6" style={{ backgroundImage: `url(${points[selectedPoint].image})`}}>
+          <div className="relative backdrop-blur-xl bg-cover bg-center rounded-2xl py-12 p-6" style={{ backgroundImage: `url(${points[selectedPoint].image})` }}>
+            {/* Dark overlay for better text readability */}
+            <div className="absolute inset-0 bg-black/60 rounded-2xl"></div>
+            
+            {/* Content with higher z-index */}
+            <div className="relative z-10">
             <button
               onClick={() => {
                 gsap.to(cardRef.current, {
@@ -165,61 +185,66 @@ const CircleWithPoints = () => {
                   },
                 });
               }}
-              className="absolute top-3 right-3 p-1 rounded-full hover:bg-white/10 transition-colors"
+              className="absolute top-3 right-3 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors border border-white/20"
             >
-              <X className="w-4 h-4 text-gray-400" />
+              <X className="w-4 h-4 text-white" />
             </button>
 
-            <div className="inline-block px-3 py-1 rounded-full bg-white/50 text-xs font-medium mb-4">COMPLETE</div>
-            <div className="text-gray-400 text-sm mb-6">Feb 2024</div>
-            <h2 className="text-xl font-light text-white mb-2">{points[selectedPoint].title}</h2>
-            <p className="text-gray-400 text-sm mb-6">{points[selectedPoint].description}</p>
+            <div className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-purple-500/80 to-indigo-500/80 text-xs font-medium mb-4 text-white border border-white/20">
+              {points[selectedPoint].category}
+            </div>
+            <div className="text-gray-200 text-sm mb-6 font-medium">{points[selectedPoint].date}</div>
+            <h2 className="text-2xl font-semibold text-white mb-3 drop-shadow-lg">{points[selectedPoint].title}</h2>
+            <p className="text-gray-100 text-sm mb-6 leading-relaxed drop-shadow-md">{points[selectedPoint].description}</p>
 
             <div className="mb-6">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm text-gray-400 flex items-center gap-2">
-                  <Zap className="w-4 h-4" /> Energy Level
+                <span className="text-sm text-gray-200 flex items-center gap-2 font-medium">
+                  <Zap className="w-4 h-4 text-yellow-400" /> Уровень Качества
                 </span>
-                <span className="text-sm text-white">{points[selectedPoint].status}%</span>
+                <span className="text-sm text-white font-bold">{points[selectedPoint].status}%</span>
               </div>
-              <div className="h-1 bg-white/10 rounded-full overflow-hidden">
+              <div className="h-2 bg-black/30 rounded-full overflow-hidden border border-white/20">
                 <div
-                  className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
+                  className="h-full bg-gradient-to-r from-emerald-400 via-purple-500 to-amber-400 rounded-full shadow-lg"
                   style={{ width: `${points[selectedPoint].status}%` }}
                 ></div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-sm text-gray-400 flex items-center gap-2 mb-3">
-                <Radio className="w-4 h-4" /> CONNECTED NODES
+              <h3 className="text-sm text-gray-200 flex items-center gap-2 mb-3 font-medium">
+                <Radio className="w-4 h-4 text-cyan-400" /> СВЯЗАННЫЕ ЦЕННОСТИ
               </h3>
               <div className="flex gap-2">
                 <button
                   onClick={() => handlePointClick(getPrevPoint(selectedPoint))}
-                  className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-white hover:bg-white/10 transition-colors flex items-center gap-2"
+                  className="px-3 py-2 rounded-lg bg-black/40 border border-white/30 text-xs text-white hover:bg-black/60 transition-colors flex items-center gap-2 backdrop-blur-sm"
                 >
                   {(() => {
                     const PrevIcon = points[getPrevPoint(selectedPoint)].Icon;
-                    return <PrevIcon className="w-4 h-4" />;
+                    return <PrevIcon className={`w-3 h-3 ${points[getPrevPoint(selectedPoint)].color}`} />;
                   })()}
                   ← {points[getPrevPoint(selectedPoint)].title}
                 </button>
                 <button
                   onClick={() => handlePointClick(getNextPoint(selectedPoint))}
-                  className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-white hover:bg-white/10 transition-colors flex items-center gap-2"
+                  className="px-3 py-2 rounded-lg bg-black/40 border border-white/30 text-xs text-white hover:bg-black/60 transition-colors flex items-center gap-2 backdrop-blur-sm"
                 >
                   {(() => {
                     const NextIcon = points[getNextPoint(selectedPoint)].Icon;
-                    return <NextIcon className="w-4 h-4" />;
+                    return <NextIcon className={`w-3 h-3 ${points[getNextPoint(selectedPoint)].color}`} />;
                   })()}
                   {points[getNextPoint(selectedPoint)].title} →
                 </button>
               </div>
             </div>
+            </div>
           </div>
         </div>
       )}
+      </div>
+    </section>
     </div>
   );
 };
