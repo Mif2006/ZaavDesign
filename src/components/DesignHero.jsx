@@ -92,11 +92,22 @@ const Hero = () => {
 
           <div className="flex flex-row gap-2">
             <div className="relative h-[55vh] w-[25vw] bg-gradient-to-br from-gray-300 via-gray-400 to-gray-500 rounded-[27px] overflow-hidden group">
-              {/* Hover effect overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              {/* Integrated hover effects */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 via-purple-400/0 to-purple-600/0 group-hover:from-purple-500/20 group-hover:via-purple-400/10 group-hover:to-purple-600/30 transition-all duration-700 ease-out"></div>
               
-              {/* Subtle shine effect */}
-              <div className="absolute -top-full -left-full w-full h-full bg-gradient-to-br from-transparent via-white/20 to-transparent rotate-45 group-hover:top-full group-hover:left-full transition-all duration-1000 ease-out"></div>
+              {/* Organic light sweep */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute top-0 left-0 w-full h-full">
+                  <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] bg-gradient-conic from-transparent via-white/15 to-transparent animate-spin-slow opacity-30"></div>
+                </div>
+              </div>
+              
+              {/* Subtle particle effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white/40 rounded-full animate-pulse"></div>
+                <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-purple-300/60 rounded-full animate-pulse delay-300"></div>
+                <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-white/30 rounded-full animate-pulse delay-500"></div>
+              </div>
               
               <img alt="image2" src={shop} width={800} height={800} className="h-[80%] w-full object-cover object-center rounded-[27px]" />
               <div className="relative z-10 flex justify-between h-[20%] px-[12px] items-center">
@@ -112,11 +123,19 @@ const Hero = () => {
             </div>
 
             <div className="relative h-[55vh] w-[25vw] bg-gradient-to-br from-gray-300 via-gray-400 to-gray-500 rounded-[27px] overflow-hidden group">
-              {/* Hover effect overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              {/* Integrated hover effects */}
+              <div className="absolute inset-0 bg-gradient-to-tl from-indigo-500/0 via-indigo-400/0 to-indigo-600/0 group-hover:from-indigo-500/25 group-hover:via-indigo-400/10 group-hover:to-indigo-600/20 transition-all duration-700 ease-out"></div>
               
-              {/* Subtle shine effect */}
-              <div className="absolute -top-full -left-full w-full h-full bg-gradient-to-br from-transparent via-white/20 to-transparent rotate-45 group-hover:top-full group-hover:left-full transition-all duration-1000 ease-out"></div>
+              {/* Flowing energy effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-600">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-300/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1200 ease-out"></div>
+              </div>
+              
+              {/* Ambient glow */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-indigo-400/20 rounded-full blur-xl"></div>
+                <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-indigo-300/15 rounded-full blur-lg"></div>
+              </div>
               
               <img src={IMG7}  alt={shop} width={800} height={800} className="h-[80%] w-full object-cover object-center rounded-[27px]" />
               <div className="relative z-10 flex justify-between h-[20%] px-[12px] items-center">
