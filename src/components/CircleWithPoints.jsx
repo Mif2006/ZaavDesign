@@ -245,7 +245,6 @@ const CircleWithPoints = () => {
       )}
       </div>
     </section>
-    </div>
   );
 };
 
