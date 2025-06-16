@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { ScrollToPlugin } from 'gsap/ScrollTrigger';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { useGSAP } from '@gsap/react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Home, ShoppingBag, Star, Store, Users, Ruler, Gem } from 'lucide-react';
