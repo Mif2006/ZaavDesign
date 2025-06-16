@@ -32,28 +32,41 @@ const TechMotion = ({
     const nameText = nameRef.current;
     const block = blockRef.current;
 
+    // Responsive height animation based on screen size
+    const getTargetHeight = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth >= 1024) { // lg and above
+        return "400px"; // Shorter height for landscape aspect ratio
+      } else if (screenWidth >= 768) { // md
+        return "420px";
+      } else { // sm and below
+        return "420px";
+      }
+    };
+
     gsap.fromTo(
       wrapper,
       { height: "40px" },
       {
-        height: "55%",
+        height: getTargetHeight(),
         duration: 1,
         scrollTrigger: {
           trigger: wrapper,
-          start: "top 80%", // Trigger when the top of wrapper is at 80% of viewport
-          end: "top 50%", // Animation progress stops at 50% of viewport
-          scrub: true,    // Smooth scrolling animation
+          start: "top 80%",
+          end: "top 50%",
+          scrub: true,
         },
       }
     );
+
     // GSAP animation for hover
     const tl = gsap.timeline({ paused: true });
     tl
-      .to(button, { opacity: 1, scale:0.9, y: 50, duration: 0.4, ease: "power2.out" }) // Show the button with animation
-      .to(block, { opacity: 0.5, duration: 0.3, ease: "power2.out" }, 0) // Hide the name text
-      .to(nameText, { opacity: 1, y: -70, duration: 0.5, ease: "power2.out" }, 0); // Slide and fade the name
+      .to(button, { opacity: 1, scale: 0.9, y: 50, duration: 0.4, ease: "power2.out" })
+      .to(block, { opacity: 0.5, duration: 0.3, ease: "power2.out" }, 0)
+      .to(nameText, { opacity: 1, y: -70, duration: 0.5, ease: "power2.out" }, 0);
 
-    // Mouse enter and leave event listeners for the wrapper div
+    // Mouse enter and leave event listeners
     const handleMouseEnter = () => {
       tl.play();
     };
@@ -65,31 +78,49 @@ const TechMotion = ({
     wrapper.addEventListener("mouseenter", handleMouseEnter);
     wrapper.addEventListener("mouseleave", handleMouseLeave);
 
+    // Handle window resize for responsive height
+    const handleResize = () => {
+      gsap.set(wrapper, { height: getTargetHeight() });
+    };
+
+    window.addEventListener("resize", handleResize);
+
     return () => {
       wrapper.removeEventListener("mouseenter", handleMouseEnter);
       wrapper.removeEventListener("mouseleave", handleMouseLeave);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
     <motion.div
       ref={wrapperRef}
-      className="rounded-[40px] mt-20 md:mt-10 lg:mt-0 absolute top-[21%] cursor-pointer w-[4000px] h-[420px] md:w-[300px] lg:h-[660px] overflow-hidden bg-gray-800 bg-cover bg-center p-2 flex-center flex-col md:flex-row gap-0 md:gap-4 lg:gap-12"
+      className="rounded-[40px] mt-20 md:mt-10 lg:mt-0 absolute top-[21%] cursor-pointer 
+                 w-[280px] h-[420px] 
+                 sm:w-[300px] sm:h-[420px] 
+                 md:w-[320px] md:h-[420px] 
+                 lg:w-[480px] lg:h-[400px] 
+                 xl:w-[520px] xl:h-[400px] 
+                 2xl:w-[560px] 2xl:h-[400px]
+                 overflow-hidden bg-gray-800 bg-cover bg-center p-2 
+                 flex-center flex-col gap-0 
+                 transition-all duration-300"
       onClick={handleClick}
       initial="center"
       animate={animate}
       variants={variants}
       transition={{ duration: 0.5 }}
       style={{
-        width: "320px",
         backgroundImage: `url(${src})`,
       }}
     >
       <div ref={blockRef} className="z-[10] bg-black opacity-0 absolute inset-0 w-full h-full" />
-      <div className="flex flex-col gap-3 md:gap-5 z-[10] relative">
+      <div className="flex flex-col gap-3 md:gap-5 z-[10] relative w-full h-full">
         <div className="absolute inset-0 w-full h-full flex items-center justify-center">
           <h3
-            className="text-[24px] md:text-5xl text-white text-center md:text-left font-extrabold tracking-wider leading-tight shadow-md"
+            className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] xl:text-[36px] 
+                       text-white text-center font-extrabold tracking-wider leading-tight shadow-md
+                       px-4"
             ref={nameRef}
           >
             {name}
@@ -98,7 +129,11 @@ const TechMotion = ({
         <div className="absolute inset-0 w-full h-full flex items-center justify-center">
           <button
             ref={buttonRef}
-            className="text-[20px] whitespace-nowrap font-semibold  md:text-[24px] font-semibold text-white bg-indigo-500 px-7 py-4 rounded-lg opacity-0 transition-transfor scale-80  ease-in-out"
+            className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] xl:text-[24px] 
+                       whitespace-nowrap font-semibold text-white bg-indigo-500 
+                       px-4 py-3 sm:px-5 sm:py-3 md:px-6 md:py-4 lg:px-7 lg:py-4 
+                       rounded-lg opacity-0 transition-transform scale-80 ease-in-out
+                       hover:bg-indigo-600"
           >
             В Каталог
           </button>
