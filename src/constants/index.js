@@ -10,6 +10,7 @@ import IMG8 from '../assets/images/IMG_4806.jpg'
 
 import video1 from '../assets/videos/1012.mov'
 import video2 from '../assets/videos/1013.mov'
+import { Brain, Zap, Lightbulb, Radar, Radio } from 'lucide-react'
 
 export const points = [
     {

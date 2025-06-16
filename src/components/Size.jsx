@@ -242,8 +242,6 @@ const Size = () => {
           </div>
         </div>
 
-        {/* Extra spacing to ensure full scroll */}
-        <div className="h-32 md:h-48"></div>
       </div>
 
       {/* Background Layer */}

@@ -8,6 +8,7 @@ import Services from "./Services"
 import Size from './Size'
 import ImageSlider from './HeroComp'
 import VideoComp from './VideoComp'
+import CircleWithPoints from './CircleWithPoints'
 
 const FrontPage = () => {
   return (
@@ -20,7 +21,8 @@ const FrontPage = () => {
       {/* <VideoComp /> */}
       {/* <Services /> */}
      <Testimonials />
-    <Size />
+     <Size />
+     <CircleWithPoints />
     </div>
   )
 }
