@@ -25,7 +25,7 @@ const Size = () => {
       scrollTrigger: {
         trigger: sizeTrigger.current,
         start: "top top",
-        end: "+=10%", // Extended to accommodate internal scrolling
+        end: "+=200%", // Extended to accommodate internal scrolling
         scrub: true,
         pin: true,
       },
