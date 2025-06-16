@@ -11,6 +11,50 @@ import IMG8 from '../assets/images/IMG_4806.jpg'
 import video1 from '../assets/videos/1012.mov'
 import video2 from '../assets/videos/1013.mov'
 
+export const points = [
+    {
+      Icon: Brain,
+      color: 'text-blue-400',
+      title: 'Design',
+      description: 'UI/UX design and system architecture.',
+      image: bluepurple1,
+      status: 90,
+    },
+    {
+      Icon: Zap,
+      color: 'text-yellow-400',
+      title: 'Planning',
+      description: 'Project planning and resource allocation.',
+      image: bluepurple2,
+      status: 75,
+    },
+    {
+      Icon: Lightbulb,
+      color: 'text-purple-400',
+      title: 'Development',
+      description: 'Implementation and code development.',
+      image: bluepurple6,
+      status: 60,
+    },
+    {
+      Icon: Radar,
+      color: 'text-green-400',
+      title: 'Testing',
+      description: 'Quality assurance and testing procedures.',
+      image: bluepurple7,
+      status: 45,
+    },
+    {
+      Icon: Radio,
+      color: 'text-pink-400',
+      title: 'Release',
+      description: 'Deployment and release management.',
+      image: bluepurple5,
+      status: 30,
+    },
+  ];
+
+
 export const jewelryCatalog = [
   {
     "type": "new items",
