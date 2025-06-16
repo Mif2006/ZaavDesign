@@ -117,7 +117,7 @@ const CircleWithPoints = () => {
 
       <div className="relative w-full h-full flex items-center justify-center mt-20">
       <div className={`absolute z-10 text-center pointer-events-none transition-opacity duration-500 ${selectedPoint !== null ? 'opacity-0' : 'opacity-100'}`}>
-        <h1 className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-thin tracking-[0.3em]" style={{ fontFamily: 'Helvetica Neue, Arial, sans-serif', fontWeight: '100', letterSpacing: '0.3em' }}>
+        <h1 className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-thin tracking-[0.3em]" style={{ fontFamily: 'Futura, "Avenir Next", "Century Gothic", sans-serif', fontWeight: '100', letterSpacing: '0.3em' }}>
           ZAAVG
         </h1>
       </div>
