@@ -32,23 +32,12 @@ const TechMotion = ({
     const nameText = nameRef.current;
     const block = blockRef.current;
 
-    // Responsive height animation based on screen size
-    const getTargetHeight = () => {
-      const screenWidth = window.innerWidth;
-      if (screenWidth >= 1024) { // lg and above
-        return "400px"; // Shorter height for landscape aspect ratio
-      } else if (screenWidth >= 768) { // md
-        return "420px";
-      } else { // sm and below
-        return "420px";
-      }
-    };
-
+    // Original animation - same as before
     gsap.fromTo(
       wrapper,
       { height: "40px" },
       {
-        height: getTargetHeight(),
+        height: "600px",
         duration: 1,
         scrollTrigger: {
           trigger: wrapper,
@@ -59,7 +48,7 @@ const TechMotion = ({
       }
     );
 
-    // GSAP animation for hover
+    // GSAP animation for hover - same as before
     const tl = gsap.timeline({ paused: true });
     tl
       .to(button, { opacity: 1, scale: 0.9, y: 50, duration: 0.4, ease: "power2.out" })
@@ -78,17 +67,9 @@ const TechMotion = ({
     wrapper.addEventListener("mouseenter", handleMouseEnter);
     wrapper.addEventListener("mouseleave", handleMouseLeave);
 
-    // Handle window resize for responsive height
-    const handleResize = () => {
-      gsap.set(wrapper, { height: getTargetHeight() });
-    };
-
-    window.addEventListener("resize", handleResize);
-
     return () => {
       wrapper.removeEventListener("mouseenter", handleMouseEnter);
       wrapper.removeEventListener("mouseleave", handleMouseLeave);
-      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
