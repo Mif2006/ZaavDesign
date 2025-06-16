@@ -17,6 +17,7 @@ import IMG8 from "../assets/images/IMG_4806.jpg";
 import shop from "../assets/images/shop.jpg";
 import InsideCatalogue from "./InsideCatalogue";
 import CartModal from "./CardModal";
+import Footer from "./Footer";
 
 const Catalogue = () => {
   const videos = [video1, video2, video1];
@@ -202,6 +203,7 @@ const Catalogue = () => {
       )}
 
       <InsideCatalogue />
+      <Footer />
     </div>
   );
 };

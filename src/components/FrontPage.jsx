@@ -9,6 +9,7 @@ import Size from './Size'
 import ImageSlider from './HeroComp'
 import VideoComp from './VideoComp'
 import CircleWithPoints from './CircleWithPoints'
+import Footer from './Footer'
 
 const FrontPage = () => {
   return (
@@ -23,6 +24,7 @@ const FrontPage = () => {
      <Testimonials />
      <Size />
      <CircleWithPoints />
+     <Footer />
     </div>
   )
 }
