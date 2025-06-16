@@ -58,18 +58,22 @@ const Hero = () => {
     <div className="w-screen px-2 min-h-screen pt-[8vh]">
       <div className="w-full flex flex-row gap-2 items-center">
         <div className="flex flex-col w-[50vw] gap-2 pt-[2px]">
-          <div className="bg-gray-400 p-8 flex justify-between w-[50vw] h-[35vh] rounded-[37px]">
-            <div className="flex flex-col gap-6">
-              <div className="flex flex-row items-center">
-                <h1 className="text-[36px] text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-indigo-500 font-semibold">Авторские Украшения с Острова Бали</h1>
-                <div className="flex flex-row h-[6vh] items-center">
-                  <button className="rounded-full bg-black text-white h-[60px] w-[160px] transition-transform duration-500 hover:scale-105">В Каталог</button>
-                  <div className="rounded-full cursor-pointer text-white flex items-center justify-center h-[6vh] w-[6vh] bg-black transition-transform duration-500 hover:scale-105">
+          <div className="bg-gray-400 p-4 sm:p-6 md:p-8 flex flex-col lg:flex-row lg:justify-between w-[50vw] h-auto min-h-[35vh] rounded-[37px]">
+            <div className="flex flex-col gap-4 md:gap-6 flex-1">
+              <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6">
+                <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[36px] text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-indigo-500 font-semibold leading-tight">
+                  Авторские Украшения с Острова Бали
+                </h1>
+                <div className="flex flex-row items-center gap-2 lg:gap-0">
+                  <button className="rounded-full bg-black text-white px-4 py-2 sm:px-6 sm:py-3 md:h-[60px] md:w-[160px] text-sm md:text-base transition-transform duration-500 hover:scale-105 whitespace-nowrap">
+                    В Каталог
+                  </button>
+                  <div className="rounded-full cursor-pointer text-white flex items-center justify-center h-[40px] w-[40px] sm:h-[50px] sm:w-[50px] md:h-[6vh] md:w-[6vh] bg-black transition-transform duration-500 hover:scale-105">
                     <MoveUpRight />
                   </div>
                 </div>
               </div>
-              <p className="text-xl">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
                 Украшения, заряженные энергетикой чудо-острова. Уникальный дизайн со смыслом. Доставка по всему миру.
               </p>
             </div>
