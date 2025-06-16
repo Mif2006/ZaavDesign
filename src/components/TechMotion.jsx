@@ -36,7 +36,7 @@ const TechMotion = ({
       wrapper,
       { height: "40px" },
       {
-        height: "700px",
+        height: "50%",
         duration: 1,
         scrollTrigger: {
           trigger: wrapper,
