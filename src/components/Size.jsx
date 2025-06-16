@@ -25,7 +25,7 @@ const Size = () => {
       scrollTrigger: {
         trigger: sizeTrigger.current,
         start: "top top",
-        end: "+=150%", // Reduced scroll area
+        end: "+=300%", // Extended to accommodate internal scrolling
         scrub: true,
         pin: true,
       },
@@ -36,70 +36,82 @@ const Size = () => {
     
     // First phase: scroll through the content
     scrollTimeline.to(scrollContainer.current, {
-      y: "-40%", // Reduced scroll distance
-      duration: 0.5,
+      y: "-60%", // Scroll up to reveal all content
+      duration: 0.7,
       ease: "power2.inOut",
     });
 
     // Second phase: trigger layer animation only after content is fully scrolled
     scrollTimeline.to(".layer", {
       x: 0,
-      duration: 0.3,
+      duration: 0.4,
       ease: "power2.inOut",
       onStart: () => {
         gsap.to(".maintext", {
           scale: 0,
           opacity: 0,
-          duration: 0.2,
+          duration: 0.3,
         });
         gsap.to(".paragraphs", {
           scale: 0,
           opacity: 0,
-          duration: 0.2,
+          duration: 0.3,
         });
         gsap.to(".columns", {
           opacity: 0,
-          duration: 0.2,
+          duration: 0.3,
         });
       },
       onReverseComplete: () => {
         gsap.to(".maintext", {
           scale: 1,
           opacity: 1,
-          duration: 0.2,
+          duration: 0.3,
         });
         gsap.to(".paragraphs", {
           scale: 1,
           opacity: 1,
-          duration: 0.2,
+          duration: 0.3,
         });
         gsap.to(".columns", {
           opacity: 1,
-          duration: 0.2,
+          duration: 0.3,
         });
       },
-    }, "+=0.2") // Reduced delay before layer animation starts
+    }, "+=0.3") // Delay before layer animation starts
     .to(".layer", {
       scale: 0.5,
-      duration: 0.2,
+      duration: 0.3,
       ease: "power2.out",
     });
 
     // Add the scroll timeline to the main timeline
     mainTimeline.add(scrollTimeline);
 
+    // Animate cards visibility as they come into view during scroll
+    gsap.to('.columns', {
+      opacity: 1,
+      duration: 0.5,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".columns",
+        start: "top 90%",
+        end: "top 70%",
+        toggleActions: "play none none reverse",
+      },
+    });
 
   }, []);
 
   return (
     <section
       ref={sizeTrigger}
-      className="relative bg-zinc flex flex-col items-center justify-start min-h-screen bg-gradient-to-bl from-black via-purple-900/20 to-black min-w-screen w-full overflow-hidden"
+      className="relative bg-zinc flex flex-col items-center justify-start gap-4 md:gap-8 py-4 md:py-8 min-h-screen bg-gradient-to-bl from-black via-purple-900/20 to-black min-w-screen w-full overflow-hidden"
     >
       {/* Scrollable Content Container */}
       <div 
         ref={scrollContainer}
-        className="w-full flex flex-col items-center justify-start gap-4 md:gap-8 py-8 md:py-12"
+        className="w-full flex flex-col items-center justify-start gap-4 md:gap-8 py-4 md:py-8"
       >
         {/* Title */}
         <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-4">
