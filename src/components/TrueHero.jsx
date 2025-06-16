@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react'
 
 import IMG6202 from '../assets/images/IMG_6202.png'
@@ -141,7 +140,7 @@ const TrueHero = () => {
 
   return (
     <>
-    <section id="truehero" ref={triggerRef} style={{backgroundImage: `url(${purple2})`}} className=' bg-cover bg-center w-full flex items-center justify-center min-h-screen h-[13]  relative'>
+    <section id="truehero" ref={triggerRef} style={{backgroundImage: `url(${purple2})`}} className=' bg-cover bg-center w-full flex items-center justify-center min-h-screen h-screen overflow-hidden relative'>
       {/* Gradient background */}
   
       <img src={IMG6202} className='hands absolute top-[-43vh] w-[700px] z-[12] rotate-[90deg]' />
@@ -158,9 +157,7 @@ const TrueHero = () => {
         {/* <img src={IMG10} style={{top: "-22%", left: "100%"}} className='  h-full w-full object-cover' /> */}
         
       </div>
-      <div className='yeet hidden md:flex absolute top-50 left-50 z-1 opacity-0 h-[120vh]'>
-      </div>
-      <div className='yeet hidden md:flex absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-1 opacity-0 w-full h-full'>
+      <div className='yeet hidden md:flex absolute top-50 left-50 z-1 opacity-0'>
       {/* <ImageSlider /> */}
       {/* <InsideOfHero /> */}
       <Hero />
