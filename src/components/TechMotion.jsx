@@ -74,7 +74,7 @@ const TechMotion = ({
   return (
     <motion.div
       ref={wrapperRef}
-      className="rounded-[40px] mt-20 md:mt-10 lg:mt-0 absolute top-[21%] cursor-pointer w-[320px] h-[420px] md:w-[300px] lg:h-[660px] overflow-hidden bg-gray-800 bg-cover bg-center p-2 flex-center flex-col md:flex-row gap-0 md:gap-4 lg:gap-12"
+      className="rounded-[40px] mt-20 md:mt-10 lg:mt-0 absolute top-[21%] cursor-pointer w-[400px] h-[420px] md:w-[300px] lg:h-[660px] overflow-hidden bg-gray-800 bg-cover bg-center p-2 flex-center flex-col md:flex-row gap-0 md:gap-4 lg:gap-12"
       onClick={handleClick}
       initial="center"
       animate={animate}
