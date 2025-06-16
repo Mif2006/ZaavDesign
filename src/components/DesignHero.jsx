@@ -58,8 +58,19 @@ const Hero = () => {
     <div className="w-screen px-2 min-h-screen pt-[8vh]">
       <div className="w-full flex flex-row gap-2 items-center">
         <div className="flex flex-col w-[50vw] gap-2 pt-[2px]">
-          <div className="bg-gray-400 p-4 sm:p-6 md:p-8 flex flex-col lg:flex-row lg:justify-between w-[50vw] h-auto min-h-[35vh] rounded-[37px]">
-            <div className="flex flex-col gap-4 md:gap-6 flex-1">
+          <div className="relative overflow-hidden p-4 sm:p-6 md:p-8 flex flex-col lg:flex-row lg:justify-between w-[50vw] h-auto min-h-[35vh] rounded-[37px] bg-gradient-to-br from-gray-300 via-gray-400 to-gray-500">
+            {/* Animated gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-transparent to-indigo-500/20 animate-pulse"></div>
+            
+            {/* Subtle geometric pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-4 right-4 w-20 h-20 border border-white/30 rounded-full"></div>
+              <div className="absolute bottom-4 left-4 w-16 h-16 border border-white/20 rounded-lg rotate-45"></div>
+              <div className="absolute top-1/2 left-1/4 w-12 h-12 bg-white/10 rounded-full blur-sm"></div>
+            </div>
+            
+            {/* Content with higher z-index */}
+            <div className="relative z-10 flex flex-col gap-4 md:gap-6 flex-1">
               <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6">
                 <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[36px] text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-indigo-500 font-semibold leading-tight">
                   Авторские Украшения с Острова Бали
@@ -80,9 +91,15 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-row gap-2">
-            <div className="h-[55vh] w-[25vw] bg-gray-400 rounded-[27px]">
+            <div className="relative h-[55vh] w-[25vw] bg-gradient-to-br from-gray-300 via-gray-400 to-gray-500 rounded-[27px] overflow-hidden group">
+              {/* Hover effect overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Subtle shine effect */}
+              <div className="absolute -top-full -left-full w-full h-full bg-gradient-to-br from-transparent via-white/20 to-transparent rotate-45 group-hover:top-full group-hover:left-full transition-all duration-1000 ease-out"></div>
+              
               <img alt="image2" src={shop} width={800} height={800} className="h-[80%] w-full object-cover object-center rounded-[27px]" />
-              <div className="flex justify-between h-[20%] px-[12px] items-center">
+              <div className="relative z-10 flex justify-between h-[20%] px-[12px] items-center">
                 
                 <h3 className="font-semibold text-[20px]">Наш Магазин</h3>
                
@@ -94,9 +111,15 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="h-[55vh] w-[25vw] bg-gray-400 rounded-[27px]">
+            <div className="relative h-[55vh] w-[25vw] bg-gradient-to-br from-gray-300 via-gray-400 to-gray-500 rounded-[27px] overflow-hidden group">
+              {/* Hover effect overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Subtle shine effect */}
+              <div className="absolute -top-full -left-full w-full h-full bg-gradient-to-br from-transparent via-white/20 to-transparent rotate-45 group-hover:top-full group-hover:left-full transition-all duration-1000 ease-out"></div>
+              
               <img src={IMG7}  alt={shop} width={800} height={800} className="h-[80%] w-full object-cover object-center rounded-[27px]" />
-              <div className="flex justify-between h-[20%] px-[12px] items-center">
+              <div className="relative z-10 flex justify-between h-[20%] px-[12px] items-center">
                 <h3 className="font-semibold text-[20px]">Новинки</h3>
                 <a href='/catalogue'>
                 <div className="rounded-full cursor-pointer text-white flex items-center justify-center h-[6vh] w-[6vh] bg-black transition-transform duration-500 hover:scale-105">
