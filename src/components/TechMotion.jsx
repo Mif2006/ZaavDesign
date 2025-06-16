@@ -74,22 +74,21 @@ const TechMotion = ({
   return (
     <motion.div
       ref={wrapperRef}
-      className="rounded-[40px] mt-20 md:mt-10 lg:mt-0 absolute top-[21%] cursor-pointer w-[600px] h-[300px] md:w-[700px] lg:w-[800px] lg:h-[300px] overflow-hidden bg-gray-800 bg-cover bg-center p-2 flex-center flex-row gap-0 md:gap-4 lg:gap-12"
+      className="rounded-[20px] cursor-pointer w-[280px] h-[200px] sm:w-[320px] sm:h-[220px] md:w-[350px] md:h-[240px] lg:w-[380px] lg:h-[260px] overflow-hidden bg-gray-800 bg-cover bg-center p-2 flex-center flex-row relative"
       onClick={handleClick}
-      initial="center"
+      initial="static"
       animate={animate}
       variants={variants}
       transition={{ duration: 0.5 }}
       style={{
-        width: "70%",
         backgroundImage: `url(${src})`,
       }}
     >
       <div ref={blockRef} className="z-[10] bg-black opacity-0 absolute inset-0 w-full h-full" />
-      <div className="flex flex-row items-center justify-between w-full gap-3 md:gap-5 z-[10] relative px-8">
+      <div className="flex flex-row items-center justify-between w-full gap-2 md:gap-3 z-[10] relative px-4">
         <div className="flex items-center justify-start w-full">
           <h3
-            className="text-[32px] md:text-4xl lg:text-5xl text-white text-left font-extrabold tracking-wider leading-tight shadow-md"
+            className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] text-white text-left font-extrabold tracking-wider leading-tight shadow-md"
             ref={nameRef}
           >
             {name}
@@ -98,7 +97,7 @@ const TechMotion = ({
         <div className="flex items-center justify-end">
           <button
             ref={buttonRef}
-            className="text-[18px] md:text-[20px] lg:text-[24px] whitespace-nowrap font-semibold text-white bg-indigo-500 px-6 py-3 md:px-7 md:py-4 rounded-lg opacity-0 transition-transform scale-80 ease-in-out"
+            className="text-[12px] sm:text-[14px] md:text-[16px] whitespace-nowrap font-semibold text-white bg-indigo-500 px-3 py-2 md:px-4 md:py-2 rounded-lg opacity-0 transition-transform scale-80 ease-in-out"
           >
             В Каталог
           </button>

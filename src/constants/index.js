@@ -365,6 +365,7 @@ export const imagesArray = [
 ];
 
 export const imageVariants = {
+  static: { x: "0%", y: "0%", scale: 1, zIndex: 1 },
   center: { x: "0%", y: "0%", scale: 1, zIndex: 7 },
   left1: { x: "-40%", y: "0%", scale: 0.8, zIndex: 5 },
   left2: { x: "-80%", y: "0%", scale: 0.6, zIndex: 4 },
