@@ -19,16 +19,16 @@ const Features = () => {
         toggleActions: 'play pause pause reverse',
         start: '-10% bottom', // When 10% of the video enters the viewport from the bottom
         onEnter: () => {
-          videoRef.current.play(); // Start playing the video when it enters the viewport
+          videoRef.current?.play(); // Start playing the video when it enters the viewport
         },
         onLeave: () => {
-          videoRef.current.pause(); // Pause the video when it leaves the viewport
+          videoRef.current?.pause(); // Pause the video when it leaves the viewport
         },
         onEnterBack: () => {
-          videoRef.current.play(); // Resume playing when re-entering
+          videoRef.current?.play(); // Resume playing when re-entering
         },
         onLeaveBack: () => {
-          videoRef.current.pause(); // Pause again when scrolling back
+          videoRef.current?.pause(); // Pause again when scrolling back
         }
       }
     });
@@ -48,7 +48,7 @@ const Features = () => {
   }, []);
 
   return (
-    <section className="h-full common-padding bg-gradient-to-b from-black to-purple-900/20 relative overflow-hidden">
+    <section id="features" className="h-full common-padding bg-gradient-to-b from-black to-purple-900/20 relative overflow-hidden">
       <div className="screen-max-width">
         <div className="flex flex-col justify-center items-center overflow-hidden">
           <div className="mt-32 mb-24 pl-24">

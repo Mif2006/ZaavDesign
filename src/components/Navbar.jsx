@@ -69,24 +69,24 @@ const Navbar = () => {
     
     switch(sectionId) {
       case 'truehero':
-        targetElement = document.querySelector('section') || document.body; // First section (TrueHero)
+        targetElement = document.querySelector('#truehero') || document.querySelector('section') || document.body; // First section (TrueHero)
         break;
       case 'features':
-        targetElement = document.querySelector('#highlight') || 
+        targetElement = document.querySelector('#features') || document.querySelector('#highlight') || 
                       document.querySelectorAll('section')[2]; // Features section (after Highlights)
         break;
       case 'bestsellers':
-        targetElement = document.querySelector('#bestsellers') || 
+        targetElement = document.querySelector('#bestsellers') || document.querySelector('#tech') ||
                       document.querySelectorAll('section')[3]; // ImageSlider section
         break;
       case 'shop':
-        targetElement = document.querySelectorAll('section')[4]; // Shop section
+        targetElement = document.querySelector('#shop') || document.querySelectorAll('section')[4]; // Shop section
         break;
       case 'testimonials':
-        targetElement = document.querySelectorAll('section')[5]; // Testimonials section
+        targetElement = document.querySelector('#testimonials') || document.querySelectorAll('section')[5]; // Testimonials section
         break;
       case 'size':
-        targetElement = document.querySelectorAll('section')[6]; // Size section
+        targetElement = document.querySelector('#size') || document.querySelectorAll('section')[6]; // Size section
         break;
       default:
         targetElement = document.querySelector('section') || document.body;

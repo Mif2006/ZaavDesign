@@ -150,7 +150,6 @@ const Footer = () => {
             </div>
             
             <p className="text-gray-300 text-sm leading-relaxed max-w-md">
-            <p className="text-gray-100 text-sm leading-relaxed max-w-md">
               Авторские украшения с острова Бали. Каждое изделие создается вручную с особой энергетикой 
               и уникальным дизайном, вдохновленным древними символами и природой.
             </p>

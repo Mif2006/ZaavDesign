@@ -1,7 +1,7 @@
 import React from "react";
 import { jewelryCatalog } from "../constants";
 
-const InsideCatalogue = ({ setCart }) => {
+const InsideCatalogue = () => {
   const addToCart = (item) => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const existingItemIndex = cart.findIndex((cartItem) => cartItem.product === item.product);
@@ -13,7 +13,7 @@ const InsideCatalogue = ({ setCart }) => {
       cart[existingItemIndex].quantity += 1; // Increment quantity if item exists
     }
 
-    setCart(cart); // Update state with new cart
+    // Update localStorage only since we don't have setCart prop
     localStorage.setItem("cart", JSON.stringify(cart)); // Save to localStorage
     alert(`${item.product} has been added to your cart.`);
   };
