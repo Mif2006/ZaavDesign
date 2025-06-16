@@ -100,7 +100,7 @@ const CircleWithPoints = () => {
   }, [showCard]);
 
   return (
-    <section className="relative w-full min-h-screen bg-gradient-to-bl from-black via-purple-900/20 to-black flex items-center justify-center py-20">
+    <section className="relative w-full h-[120vh] bg-gradient-to-bl from-black via-purple-900/20 to-black flex items-center justify-center py-20">
       {/* Title Section */}
       <div className="absolute top-10 left-1/2 transform -translate-x-1/2 text-center z-20">
         <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-4 justify-center">
@@ -110,12 +110,12 @@ const CircleWithPoints = () => {
           </h1>
           <Gem className="text-purple-400 w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12 rotate-180" />
         </div>
-        <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
+        <p className="text-gray-100 text-lg md:text-xl max-w-2xl mx-auto">
           Каждый день мы усердно работаем, чтобы сделать жизнь наших клиентов ярче и красивее
         </p>
       </div>
 
-      <div className="relative w-full h-full flex items-center justify-center mt-20">
+      <div className="relative w-full h-full flex items-center justify-center mt-32">
       <div className={`absolute z-10 text-center pointer-events-none transition-opacity duration-500 ${selectedPoint !== null ? 'opacity-0' : 'opacity-100'}`}>
         <h1 className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-thin tracking-[0.3em]" style={{ fontFamily: 'Futura, "Avenir Next", "Century Gothic", sans-serif', fontWeight: '100', letterSpacing: '0.3em' }}>
           ZAAVG
