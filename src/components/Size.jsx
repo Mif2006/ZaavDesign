@@ -17,61 +17,76 @@ gsap.registerPlugin(ScrollTrigger);
 const Size = () => {
   const sizeTrigger = useRef(null);
   const scrollContainer = useRef(null);
-  const paragraphsCard = useRef(null);
+  const lastCard = useRef(null);
 
   useGSAP(() => {
-    // Create a timeline that triggers when the bottom of the paragraphs card is visible
-    const tl = gsap.timeline({
+    // Main timeline for the entire section
+    const mainTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: sizeTrigger.current,
         start: "top top",
-        end: "+=200%", 
+        end: "+=300%", // Extended to accommodate internal scrolling
         scrub: true,
         pin: true,
-        onUpdate: (self) => {
-          // Check if we've scrolled enough to see the bottom of the paragraphs card
-          const progress = self.progress;
-          if (progress >= 0.6) { // Trigger when 60% through the scroll
-            // Start layer animation
-            if (!self.vars.layerTriggered) {
-              self.vars.layerTriggered = true;
-              gsap.to(".layer", {
-                x: 0,
-                duration: 0.7,
-                ease: "power2.inOut",
-                onStart: () => {
-                  gsap.to(".maintext", { scale: 0, opacity: 0, duration: 0.5 });
-                  gsap.to(".paragraphs", { scale: 0, opacity: 0, duration: 0.5 });
-                  gsap.to(".columns", { opacity: 0, duration: 0.5 });
-                },
-              });
-              gsap.to(".layer", {
-                scale: 0.5,
-                duration: 0.4,
-                ease: "power2.out",
-                delay: 0.7,
-              });
-            }
-          } else if (progress < 0.6) {
-            // Reset if scrolling back up
-            if (self.vars.layerTriggered) {
-              self.vars.layerTriggered = false;
-              gsap.to(".layer", { x: "100%", scale: 1, duration: 0.5 });
-              gsap.to(".maintext", { scale: 1, opacity: 1, duration: 0.5 });
-              gsap.to(".paragraphs", { scale: 1, opacity: 1, duration: 0.5 });
-              gsap.to(".columns", { opacity: 1, duration: 0.5 });
-            }
-          }
-        },
       },
     });
 
-    // Scroll the content to reveal all cards
-    tl.to(scrollContainer.current, {
-      y: "-50%", // Scroll up to reveal content
-      duration: 1,
+    // Internal scroll animation for the content
+    const scrollTimeline = gsap.timeline();
+    
+    // First phase: scroll through the content
+    scrollTimeline.to(scrollContainer.current, {
+      y: "-60%", // Scroll up to reveal all content
+      duration: 0.7,
       ease: "power2.inOut",
     });
+
+    // Second phase: trigger layer animation only after content is fully scrolled
+    scrollTimeline.to(".layer", {
+      x: 0,
+      duration: 0.4,
+      ease: "power2.inOut",
+      onStart: () => {
+        gsap.to(".maintext", {
+          scale: 0,
+          opacity: 0,
+          duration: 0.3,
+        });
+        gsap.to(".paragraphs", {
+          scale: 0,
+          opacity: 0,
+          duration: 0.3,
+        });
+        gsap.to(".columns", {
+          opacity: 0,
+          duration: 0.3,
+        });
+      },
+      onReverseComplete: () => {
+        gsap.to(".maintext", {
+          scale: 1,
+          opacity: 1,
+          duration: 0.3,
+        });
+        gsap.to(".paragraphs", {
+          scale: 1,
+          opacity: 1,
+          duration: 0.3,
+        });
+        gsap.to(".columns", {
+          opacity: 1,
+          duration: 0.3,
+        });
+      },
+    }, "+=0.3") // Delay before layer animation starts
+    .to(".layer", {
+      scale: 0.5,
+      duration: 0.3,
+      ease: "power2.out",
+    });
+
+    // Add the scroll timeline to the main timeline
+    mainTimeline.add(scrollTimeline);
 
     // Animate cards visibility as they come into view during scroll
     gsap.to('.columns', {
@@ -123,10 +138,7 @@ const Size = () => {
         </div>
 
         {/* Enhanced Paragraphs */}
-        <div 
-          ref={paragraphsCard}
-          className="paragraphs bg-gradient-to-r from-indigo-900/30 to-purple-900/30 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 border border-indigo-500/30 shadow-2xl max-w-6xl mx-4"
-        >
+        <div className="paragraphs bg-gradient-to-r from-indigo-900/30 to-purple-900/30 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 border border-indigo-500/30 shadow-2xl max-w-6xl mx-4">
           <div className="space-y-4 md:space-y-6">
             <div className="flex items-start gap-3 md:gap-4">
               <CheckCircle className="text-green-400 w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 flex-shrink-0 mt-1" />
@@ -212,6 +224,7 @@ const Size = () => {
             </div>
 
             <div 
+              ref={lastCard}
               className="card flex flex-col gap-3 md:gap-4 text-center p-4 md:p-6 bg-transparent border border-purple-500 rounded-lg shadow-lg transition-transform duration-500 scale-[1] hover:scale-[1.05] md:hover:scale-[1.1]"
             >
               <div className="flex justify-center mb-2">
