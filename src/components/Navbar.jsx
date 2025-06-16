@@ -50,12 +50,6 @@ const Navbar = () => {
       type: 'scroll'
     },
     {
-      name: "О нас",
-      icon: Star,
-      action: () => scrollToSection('about'),
-      type: 'scroll'
-    },
-    {
       name: "Каталог",
       icon: ShoppingBag,
       link: "/catalogue",

@@ -81,7 +81,7 @@ const TechMotion = ({
       variants={variants}
       transition={{ duration: 0.5 }}
       style={{
-        width: "42%",
+        width: "320px",
         backgroundImage: `url(${src})`,
       }}
     >

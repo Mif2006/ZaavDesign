@@ -53,7 +53,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   };
 
   return (
-    <div className="flex flex-col transition-transform duration-500 scale-[1] hover:scale-[1.1] w-[300px] bg-white/5 backdrop-blur-lg rounded-xl p-6 mx-3">
+    <div className="flex flex-col transition-transform duration-500 scale-[1] hover:scale-[1.1] w-[300px] bg-white/5 backdrop-blur-lg rounded-xl p-6 mx-3 flex-shrink-0">
       <div className="flex items-center mb-4">
         <img
           src={image}

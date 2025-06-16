@@ -22,11 +22,11 @@ const Testimonials = () => {
 
       <div
         ref={containerRef}
-        className="flex overflow-x-hidden"
+        className="flex overflow-x-hidden w-full"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        <div className="flex animate-scroll">
+        <div className="flex animate-scroll min-w-max">
           {[...testimonials, ...testimonials].map((testimonial, index) => (
             <TestimonialCard
               key={`${testimonial.id}-${index}`}
