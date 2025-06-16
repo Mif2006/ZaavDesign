@@ -106,23 +106,20 @@ const CircleWithPoints = () => {
         <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-4 justify-center">
           <Gem className="text-purple-400 w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12" />
           <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-center text-purple-400">
-            Наши Ценности
+            Творим для Вас
           </h1>
           <Gem className="text-purple-400 w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12 rotate-180" />
         </div>
         <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
-          Откройте для себя философию ZaavG и то, что делает наши украшения особенными
+          Каждый день мы усердно работаем, чтобы сделать жизнь наших клиентов ярче и красивее
         </p>
       </div>
 
       <div className="relative w-full h-full flex items-center justify-center mt-20">
       <div className={`absolute z-10 text-center pointer-events-none transition-opacity duration-500 ${selectedPoint !== null ? 'opacity-0' : 'opacity-100'}`}>
-        <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-light tracking-wider">
+        <h1 className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-wider" style={{ fontFamily: 'Impact, Arial Black, sans-serif' }}>
           ZAAVG
         </h1>
-        <p className="text-gray-400 mt-2 text-sm md:text-base font-light tracking-widest">
-          PHILOSOPHY
-        </p>
       </div>
 
       <div
@@ -212,10 +209,6 @@ const CircleWithPoints = () => {
               </div>
             </div>
 
-            <div>
-              <h3 className="text-sm text-gray-200 flex items-center gap-2 mb-3 font-medium">
-                <Radio className="w-4 h-4 text-cyan-400" /> СВЯЗАННЫЕ ЦЕННОСТИ
-              </h3>
               <div className="flex gap-2">
                 <button
                   onClick={() => handlePointClick(getPrevPoint(selectedPoint))}
@@ -238,7 +231,6 @@ const CircleWithPoints = () => {
                   {points[getNextPoint(selectedPoint)].title} →
                 </button>
               </div>
-            </div>
             </div>
           </div>
         </div>

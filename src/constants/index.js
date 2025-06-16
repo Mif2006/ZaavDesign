@@ -19,7 +19,7 @@ export const points = [
       title: 'Натуральные Камни',
       description: 'Используем только подлинные драгоценные и полудрагоценные камни с острова Бали.',
       image: IMG1,
-      status: 95,
+      status: 100,
       date: 'Март 2024',
       category: 'МАТЕРИАЛЫ'
     },
@@ -39,7 +39,7 @@ export const points = [
       title: 'Уникальный Дизайн',
       description: 'Авторские дизайны, вдохновленные древними символами и природой Бали.',
       image: IMG3,
-      status: 88,
+      status: 100,
       date: 'Январь 2024',
       category: 'ДИЗАЙН'
     },
@@ -49,7 +49,7 @@ export const points = [
       title: 'Серебро 925',
       description: 'Высококачественное серебро 925 пробы с покрытием из золота 24 карата.',
       image: IMG4,
-      status: 92,
+      status: 100,
       date: 'Декабрь 2023',
       category: 'КАЧЕСТВО'
     },
@@ -59,7 +59,7 @@ export const points = [
       title: 'Энергетика Бали',
       description: 'Украшения заряжены особой энергетикой священного острова Бали.',
       image: IMG5,
-      status: 85,
+      status: 100,
       date: 'Ноябрь 2023',
       category: 'ДУХОВНОСТЬ'
     },
