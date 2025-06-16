@@ -153,7 +153,7 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="flex items-center gap-4">
-              <span className="text-gray-400 text-sm">Следите за нами:</span>
+              <span className="text-gray-200 text-sm">Следите за нами:</span>
               <div className="flex gap-3">
                 {socialLinks.map((social, index) => {
                   const Icon = social.icon;
@@ -163,7 +163,7 @@ const Footer = () => {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`p-2 rounded-full bg-white/5 border border-white/10 text-gray-400 
+                      className={`p-2 rounded-full bg-white/5 border border-white/10 text-gray-200 
                                 ${social.color} transition-all duration-300 hover:scale-110 hover:bg-white/10
                                 hover:border-white/20 hover:shadow-lg`}
                     >
@@ -186,7 +186,7 @@ const Footer = () => {
                 <li key={index}>
                   <Link
                     to={link.href}
-                    className="text-gray-400 hover:text-purple-300 transition-colors duration-300 
+                    className="text-gray-200 hover:text-purple-300 transition-colors duration-300 
                              text-sm flex items-center gap-2 group"
                   >
                     <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -205,16 +205,16 @@ const Footer = () => {
             </h3>
             <div className="space-y-3">
               <div className="flex items-start gap-3 text-sm">
-                <MapPin className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-gray-200 mt-0.5 flex-shrink-0" />
                 <div className="text-gray-300">
                   <p>Клементовский пер. 2</p>
                   <p>Москва, Россия</p>
-                  <p className="text-xs text-gray-400 mt-1">м. Новокузнецкая/Третьяковская</p>
+                  <p className="text-xs text-gray-200 mt-1">м. Новокузнецкая/Третьяковская</p>
                 </div>
               </div>
               
               <div className="flex items-center gap-3 text-sm">
-                <Phone className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                <Phone className="w-4 h-4 text-gray-200 flex-shrink-0" />
                 <a 
                   href="tel:+7-xxx-xxx-xxxx" 
                   className="text-gray-300 hover:text-purple-300 transition-colors"
@@ -224,7 +224,7 @@ const Footer = () => {
               </div>
               
               <div className="flex items-center gap-3 text-sm">
-                <Mail className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                <Mail className="w-4 h-4 text-gray-200 flex-shrink-0" />
                 <a 
                   href="mailto:info@zaavg.com" 
                   className="text-gray-300 hover:text-purple-300 transition-colors"
@@ -238,8 +238,8 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="border-t border-purple-500/20 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="text-gray-400 text-sm text-center sm:text-left">
-            <p>&copy; 2024 ZAAVG. Все права защищены.</p>
+          <div className="text-gray-200 text-sm text-center sm:text-left">
+            <p>&copy; 2025 ZAAVG. Все права защищены.</p>
             <p className="text-xs mt-1">Создано с ❤️ на острове Бали</p>
           </div>
           
@@ -248,7 +248,7 @@ const Footer = () => {
             onClick={scrollToTop}
             className="group flex items-center gap-2 px-4 py-2 rounded-full 
                      bg-gradient-to-r from-purple-500/20 to-indigo-500/20 
-                     border border-purple-500/30 text-gray-300 hover:text-white
+                     border border-purple-500/30 text-gray-200 hover:text-white
                      transition-all duration-300 hover:scale-105 hover:shadow-lg
                      hover:from-purple-500/30 hover:to-indigo-500/30"
           >
