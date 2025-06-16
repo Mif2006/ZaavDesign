@@ -109,7 +109,7 @@ const ImageSlider = () => {
   return (
     <div
       className="flex items-center justify-center py-[100vh] relative bg-gradient-to-br from-black via-purple-900/20 z-[40] to-black  bg-cover bg-center flex-col gap-2 md:gap-4 pt-28 justify-center bg-transparent min-h-screen w-screen"
-      id="tech"
+      id="bestsellers"
     >
       <div className="flex z-[24] flex-col items-center gap-2 text-center">
         <h1 className="bestsellers-title absolute top-[5vh] text-8xl font-bold font-playfair text-transparent bg-clip-text bg-gradient-to-tr from-purple-600 to-indigo-500">

@@ -18,7 +18,7 @@ const Highlights = () => {
         })
     }, [])
   return (
-    <section id='#highlight' className='w-screen overflow-hidden h-full common-padding bg-gradient-to-t from-black to-purple-900/20'>
+    <section id='highlight' className='w-screen overflow-hidden h-full common-padding bg-gradient-to-t from-black to-purple-900/20'>
         <div className='screen-max-width'>
             {/* <div className='mb-12 w-full items-end justify-between md:flex'>
                 <h1 id='title' className='section-heading'>Get the highlights.</h1>

@@ -19,12 +19,6 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/catalogue" element={<Catalogue />} />  {/* Route for Catalogue */}
       </Routes>
-      {/* <TrueHero />
-      <Highlights />
-      <Features />
-      <Shop /> */}
-      {/* <Colage /> */}
-    
     </main>
   );
 }
