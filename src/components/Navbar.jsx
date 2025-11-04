@@ -20,10 +20,10 @@ const Navbar = () => {
       type: 'scroll'
     },
     {
-      name: "Особенности",
+      name: "Сотрудничество",
       icon: Star,
-      action: () => scrollToSection('features'),
-      type: 'scroll'
+      link: "/collaboration",
+      type: 'link'
     },
     {
       name: "Бестселлеры",
